@@ -5,9 +5,11 @@ import Container from "../layout/Container";
 
 const Footer = () => {
   return (
-    <Container>
-      <h1>Footer</h1>
-    </Container>
+    <div className=" bg-[#415674]">
+      <Container>
+        <h1>Footer</h1>
+      </Container>
+    </div>
   );
 };
 
