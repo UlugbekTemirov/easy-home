@@ -72,7 +72,7 @@ const Navbar = () => {
   return (
     <div>
       <MobileMenu close={close} routes={links} open={navbar} />
-      <nav className="bg-white shadow-md py-4 fixed top-0 w-full">
+      <nav className="bg-white shadow-md h-[80px] flex items-center fixed top-0 w-full">
         <Container>
           <div className="flex justify-between items-center">
             <Logo />
