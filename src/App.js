@@ -1,7 +1,12 @@
 import React, { Suspense, useEffect, lazy } from "react";
 
 // react-router-dom
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 // animation
 import AOS from "aos";
@@ -10,6 +15,9 @@ import "aos/dist/aos.css";
 // components
 import Loader from "./components/Loader";
 import Main from "./layout/Main";
+
+import { useSelector } from "react-redux";
+import LanguageRoute from "./utils/LanguageRoute";
 
 function App() {
   const Home = lazy(() => import("./pages/Home"));
@@ -25,18 +33,63 @@ function App() {
     AOS.init();
   }, []);
 
+  const routes = [
+    {
+      path: "/",
+      element: Home,
+    },
+    {
+      path: "/about",
+      element: About,
+    },
+    {
+      path: "/contact",
+      element: Contact,
+    },
+    {
+      path: "/services",
+      element: Services,
+    },
+    {
+      path: "/products",
+      element: Products,
+    },
+    {
+      path: "/news",
+      element: News,
+    },
+    {
+      path: "/products/:slug",
+      element: Product,
+    },
+  ];
+
+  const { lang } = useSelector((state) => state.selectLang);
+
   return (
     <Router>
       <Suspense fallback={<Loader />}>
         <Main>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/products/:slug" element={<Product />} />
+            {routes.map((route, index) => (
+              <Route
+                key={index}
+                path={`${route.path}`}
+                element={<Navigate to={`/en${route.path}`} replace />}
+              />
+            ))}
+            {routes.map((route, index) => (
+              <Route
+                key={index}
+                path={`/:lang${route.path}`}
+                element={
+                  <LanguageRoute route={route}>
+                    <route.element />
+                  </LanguageRoute>
+                }
+              />
+            ))}
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Main>

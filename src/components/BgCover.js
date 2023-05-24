@@ -17,15 +17,17 @@ const BgCover = ({ image, title }) => {
     backgroundPosition: "center",
   };
   const location = useLocation();
+  const notallowed = ["en", "ru", "uz"];
 
   const getLocations = () => {
     const { pathname } = location;
-    console.log(location);
     const arr = pathname.split("/").filter((item) => item.toLowerCase());
     return arr.map((item, index) =>
       index === 0
         ? { name: item, link: `/${item}` }
-        : { name: item, link: `/${arr[index - 1]}/${item}` }
+        : index === 1
+        ? { name: item, link: `/${arr[index - 1]}/${item}` }
+        : { name: item, link: `/${arr[0]}/${arr[1]}/${item}` }
     );
   };
 
@@ -61,17 +63,20 @@ const BgCover = ({ image, title }) => {
               Home
             </Link>
             <ArrowRight />
-            {getLocations().map(({ name, link }, index) => (
-              <div key={index} className="flex items-center">
-                <Link
-                  className="capitalize text-secondary text-[20px] pt-1 font-semibold"
-                  to={link}
-                >
-                  {name}
-                </Link>
-                {index !== getLocations().length - 1 ? <ArrowRight /> : null}
-              </div>
-            ))}
+            {getLocations().map(({ name, link }, index) => {
+              if (notallowed.includes(name.toLowerCase())) return null;
+              return (
+                <div key={index} className="flex items-center">
+                  <Link
+                    className="capitalize text-secondary text-[20px] pt-1 font-semibold"
+                    to={link}
+                  >
+                    {name}
+                  </Link>
+                  {index !== getLocations().length - 1 ? <ArrowRight /> : null}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

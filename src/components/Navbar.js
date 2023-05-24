@@ -15,6 +15,9 @@ import MobileMenu from "./MobileMenu";
 import HamburgerButton from "./Hamburger";
 import Logo from "./Logo";
 
+// redux
+import { useSelector } from "react-redux";
+
 const links = [
   {
     id: 2,
@@ -68,6 +71,7 @@ const Navbar = () => {
   const close = () => {
     setNavbar(false);
   };
+  const { lang } = useSelector((state) => state.selectLang);
 
   return (
     <div>
@@ -86,7 +90,7 @@ const Navbar = () => {
                 {links.map(({ id, path, name }) => (
                   <Link
                     key={id}
-                    to={path}
+                    to={`${lang}${path}`}
                     onClick={close}
                     className="text-primary text-[16px] font-bold uppercase"
                   >
