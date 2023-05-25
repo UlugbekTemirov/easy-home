@@ -5,6 +5,7 @@ import Container from "../layout/Container";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import Translate from "../utils/Translate";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
   const navigation = [
@@ -30,10 +31,12 @@ const Footer = () => {
     },
   ];
 
+  const { lang } = useSelector((state) => state.selectLang);
+
   return (
-    <div className="bg-[#101C32] pt-[80px]">
+    <div className="bg-[#101C32] pt-[80px] pb-5">
       <Container>
-        <div className="grid grid-cols-4">
+        <div className="grid md:grid-cols-4 grid-cols-1">
           <div>
             <Logo />
           </div>
@@ -48,16 +51,22 @@ const Footer = () => {
               />
             </h3>
             <div className="flex flex-col gap-2">
-              {navigation.map((item) => (
+              {navigation.map((item, index) => (
                 <Link
+                  key={index}
                   className="w-fit text-xl text-gray-300/[0.6] font-medium hover:text-white duration-300"
-                  to={item.link}
+                  to={lang + item.link}
                 >
                   <Translate dictionary={item.title} />
                 </Link>
               ))}
             </div>
           </div>
+        </div>
+        <div>
+          <h1 className="text-gray-400 text-center">
+            Created by uniweek technologies
+          </h1>
         </div>
       </Container>
     </div>

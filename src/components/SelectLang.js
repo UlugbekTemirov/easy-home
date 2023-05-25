@@ -26,12 +26,10 @@ const SelectLang = () => {
 
   useEffect(() => {
     const path = location.pathname.slice(4);
-    const curr = location.pathname.slice(1, 3);
-    console.log(lang);
-    if (curr !== lang) {
-      navigate(`/${lang}/${path}`, { replace: true });
-    }
-  }, []);
+    navigate(`/${lang}/${path}`, { replace: true });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lang]);
 
   return (
     <div className="relative pl-4">

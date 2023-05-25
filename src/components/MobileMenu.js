@@ -26,12 +26,12 @@ const MobileMenu = ({ open, routes, close }) => {
         onClick={close}
         className={`fixed top-0 left-0 duration-700 transition-colors h-screen ${
           open
-            ? "bg-black/[0.5] z-10 w-full"
+            ? "bg-black/[0.5] z-[201] w-full"
             : "bg-transparent w-0 overflow-hidden"
         }`}
       ></div>
       <div
-        className={`bg-white rounded-l-xl flex flex-col justify-between fixed right-0 duration-500 z-10 top-0 w-[80%] py-5 px-5 ${
+        className={`bg-white rounded-l-xl flex flex-col justify-between fixed right-0 duration-500 z-[201] top-0 w-[80%] py-5 px-5 ${
           open ? "translate-x-0 shadow-2xl" : "translate-x-full"
         }  h-screen`}
       >

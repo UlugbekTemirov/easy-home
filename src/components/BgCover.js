@@ -38,7 +38,7 @@ const BgCover = ({ image, title }) => {
       data-aos="fade-up"
       data-aos-delay="10"
       style={config}
-      className="h-[400px] w-full"
+      className="h-[480px] w-full"
     >
       <div className=" bg-white/[0.7] w-full h-full flex justify-center items-center">
         <div>

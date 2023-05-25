@@ -16,7 +16,7 @@ import "aos/dist/aos.css";
 import Loader from "./components/Loader";
 import Main from "./layout/Main";
 
-import { useSelector } from "react-redux";
+// utils
 import LanguageRoute from "./utils/LanguageRoute";
 
 function App() {
@@ -63,8 +63,6 @@ function App() {
       element: Product,
     },
   ];
-
-  const { lang } = useSelector((state) => state.selectLang);
 
   return (
     <Router>
