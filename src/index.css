@@ -4,10 +4,41 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+.image-gallery-slide {
+  height: 500px;
+}
+
+.image-gallery-thumbnails-container {
+  text-align: left !important;
+}
+
+.image-gallery-thumbnail {
+  border: 0 !important;
+  width: 180px;
+  height: 150px;
+}
+
+.image-gallery-thumbnail-inner,
+.image-gallery-thumbnail-image,
+.image-gallery-image {
+  height: 100% !important;
+}
+
+.image-gallery-image {
+  object-fit: cover !important;
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Khula", sans-serif;
   overflow-x: hidden;
+}
+
+h1 {
+  padding-top: 4px;
 }
