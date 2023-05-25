@@ -1,9 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Logo = () => {
+  const { lang } = useSelector((state) => state.selectLang);
+
   return (
-    <Link to="/">
+    <Link to={`${lang}`}>
       <h1 className=" font-extrabold text-2xl">LOGO</h1>
       {/* <img
         className="w-[150px]"

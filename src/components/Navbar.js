@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // layout
 import Container from "../layout/Container";
@@ -14,6 +14,9 @@ import SelectLang from "./SelectLang";
 import MobileMenu from "./MobileMenu";
 import HamburgerButton from "./Hamburger";
 import Logo from "./Logo";
+
+// redux
+import { useSelector } from "react-redux";
 
 const links = [
   {
@@ -65,14 +68,41 @@ const links = [
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
+  const [top, setTop] = useState(0);
+  const [downScroll, setDownScroll] = useState(false);
+
   const close = () => {
     setNavbar(false);
   };
+  const { lang } = useSelector((state) => state.selectLang);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const a = window.pageYOffset;
+      setTop(a);
+      if (a > top) {
+        setDownScroll(true);
+      } else {
+        setDownScroll(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [top]);
 
   return (
     <div>
       <MobileMenu close={close} routes={links} open={navbar} />
-      <nav className="bg-white shadow-md h-[80px] flex items-center fixed top-0 w-full">
+      <nav
+        style={{
+          backdropFilter: `${top < 50 ? "blur(0px)" : "blur(5px)"}`,
+        }}
+        className={`${
+          top > 50 ? "bg-white/[0.8]" : "bg-transparent"
+        } h-[80px] duration-500 flex items-center fixed rounded-b-[30px] ${
+          downScroll ? "-top-[80px]" : "top-0"
+        } w-full z-[200]`}
+      >
         <Container>
           <div className="flex justify-between items-center">
             <Logo />
@@ -86,9 +116,9 @@ const Navbar = () => {
                 {links.map(({ id, path, name }) => (
                   <Link
                     key={id}
-                    to={path}
+                    to={`${lang}${path}`}
                     onClick={close}
-                    className="text-primary text-[16px] font-bold uppercase"
+                    className="text-primary text-[16px] font-bold uppercase hover:text-orange-600 duration-200"
                   >
                     <Translate dictionary={name} />
                   </Link>
