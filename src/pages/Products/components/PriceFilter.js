@@ -15,7 +15,7 @@ const PriceFilter = () => {
   };
 
   return (
-    <div className="mt-5">
+    <div className="xl:mt-10 mt-5">
       <MiniHeader
         title={{
           en: "Filter by price",
@@ -23,7 +23,7 @@ const PriceFilter = () => {
           uz: "Narx bo'yicha filtrlash",
         }}
       />
-      <div className="px-3 py-3">
+      <div className="px-5 py-3">
         <Slider
           className="cursor-pointer"
           trackStyle={[
@@ -63,7 +63,7 @@ const PriceFilter = () => {
         />
         <div className="flex justify-between mt-3 text-primary">
           {[0, 1].map((item) => (
-            <h1 className="font-semibold text-lg">
+            <h1 key={item} className="font-semibold text-lg">
               <PriceFormatter amount={range[item]} /> so'm
             </h1>
           ))}
