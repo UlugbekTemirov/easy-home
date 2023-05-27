@@ -33,7 +33,7 @@ const Index = () => {
   return (
     <div>
       <Helmet>
-        <meta name="description" content={"something static is here"} />
+        <meta name="description" content="something static is here" />
       </Helmet>
       <MyModal
         className="xl:w-[600px] md:w-3/4 w-[85%]"
