@@ -42,9 +42,20 @@ const Index = () => {
       <ProductBackground product={product} />
       <Container>
         <Helmet>
-          <meta property="og:title" content={product?.title[lang]} />
-          <meta name="description" content={product?.description[lang]} />
-          <meta property="og:image" content={product?.image} />
+          <meta
+            property="og:title"
+            content={"Something Static for title also"}
+          />
+          <meta
+            property="og:description"
+            content={"something static is here"}
+          />
+          <meta
+            property="og:image"
+            content={
+              "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+            }
+          />
         </Helmet>
         {product ? (
           <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[100px] gap-10 md:py-16 py-10">
