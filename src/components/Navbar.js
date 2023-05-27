@@ -98,8 +98,8 @@ const Navbar = () => {
           backdropFilter: `${top < 50 ? "blur(0px)" : "blur(5px)"}`,
         }}
         className={`${
-          top > 50 ? "bg-white/[0.8]" : "bg-transparent"
-        } h-[80px] duration-500 flex items-center fixed rounded-b-[30px] ${
+          top > 50 ? "bg-white/[0.8] shadow-2xl" : "bg-transparent"
+        } h-[80px] duration-500 flex items-center fixed rounded-b-[0px] ${
           downScroll ? "-top-[80px]" : "top-0"
         } w-full z-[200]`}
       >

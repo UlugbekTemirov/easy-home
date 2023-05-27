@@ -15,11 +15,11 @@ const Index = () => {
         image="https://blog.crobox.com/hubfs/Blog%20Post%20Photos/online%20shopping%20cover%20photo.jpg"
       />
       <Container>
-        <div className="grid xl:grid-cols-10 grid-cols-2 py-10 gap-5">
-          <div className="col-span-3">
+        <div className="grid xl:grid-cols-10 grid-cols-1 py-10 gap-10">
+          <div className="xl:col-span-3 col-span-1">
             <Sidebar />
           </div>
-          <div className="col-span-7">
+          <div className="xl:col-span-7 col-span-1">
             <Topbar />
             <ProductsList />
           </div>

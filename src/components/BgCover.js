@@ -22,16 +22,17 @@ const BgCover = ({ image, title }) => {
   const getLocations = () => {
     const { pathname } = location;
     const arr = pathname.split("/").filter((item) => item.toLowerCase());
-    return arr.map((item, index) =>
-      index === 0
-        ? { name: item, link: `/${item}` }
-        : index === 1
-        ? { name: item, link: `/${arr[index - 1]}/${item}` }
-        : { name: item, link: `/${arr[0]}/${arr[1]}/${item}` }
-    );
+    return [
+      { name: "Home", link: "/" },
+      ...arr.map((item, index) =>
+        index === 0
+          ? { name: item, link: `/${item}` }
+          : index === 1
+          ? { name: item, link: `/${arr[index - 1]}/${item}` }
+          : { name: item, link: `/${arr[0]}/${arr[1]}/${item}` }
+      ),
+    ];
   };
-
-  console.log(getLocations());
 
   return (
     <div
@@ -46,7 +47,7 @@ const BgCover = ({ image, title }) => {
             data-aos="fade-up"
             data-aos-delay="100"
             data-aos-duration="800"
-            className="font-bold text-5xl tracking-[5px] text-primary mb-8"
+            className="font-bold text-5xl tracking-[5px] text-primary mb-8 text-center"
           >
             <Translate dictionary={title} />
           </h1>
@@ -54,21 +55,21 @@ const BgCover = ({ image, title }) => {
             data-aos="fade-up"
             data-aos-delay="300"
             data-aos-duration="1000"
-            className="flex justify-center items-center"
+            className="flex justify-center items-center flex-wrap"
           >
-            <Link
-              className="text-secondary text-[20px] pt-1 font-semibold"
-              to="/"
-            >
-              Home
-            </Link>
-            <ArrowRight />
             {getLocations().map(({ name, link }, index) => {
               if (notallowed.includes(name.toLowerCase())) return null;
               return (
-                <div key={index} className="flex items-center">
+                <div
+                  key={index}
+                  className={`flex  items-center ${
+                    getLocations().length - 1 === index
+                      ? " opacity-100"
+                      : "opacity-40 "
+                  }`}
+                >
                   <Link
-                    className="capitalize text-secondary text-[20px] pt-1 font-semibold"
+                    className="capitalize text-secondary text-[20px] pt-1 font-semibold hover:text-orange-600"
                     to={link}
                   >
                     {name}

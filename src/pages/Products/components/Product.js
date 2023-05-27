@@ -14,7 +14,7 @@ const Product = ({ image, title, price, slug, index }) => {
     <Link
       to={slug}
       data-aos="fade-right"
-      data-aos-delay={index * 200}
+      data-aos-delay={index * 100}
       data-aos-once="true"
       className="shadow-product-card hover:shadow-product-card-hover overflow-hidden rounded-2xl"
     >

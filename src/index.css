@@ -4,10 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Khula", sans-serif;
   overflow-x: hidden;
+}
+
+h1 {
+  padding-top: 4px;
 }
