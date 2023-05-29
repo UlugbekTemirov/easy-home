@@ -1,46 +1,14 @@
 import React from "react";
-import Translate from "../../../utils/Translate";
+import Translate from "../utils/Translate";
 import MiniHeader from "./MiniHeader";
+import { useNavigate } from "react-router";
 
-const Categories = () => {
-  const cats = [
-    {
-      id: 1,
-      name: {
-        en: "KNX",
-        ru: "KNX",
-        uz: "KNX",
-      },
-      amount: 10,
-    },
-    {
-      id: 2,
-      name: {
-        en: "Sockets",
-        ru: "Розетки",
-        uz: "Rozetkalar",
-      },
-      amount: 5,
-    },
-    {
-      id: 3,
-      name: {
-        en: "Smart Things",
-        ru: "Умные вещи",
-        uz: "Aqlli Narsalar",
-      },
-      amount: 12,
-    },
-    {
-      id: 4,
-      name: {
-        en: "Others",
-        ru: "Другие",
-        uz: "Boshqalar",
-      },
-      amount: 34,
-    },
-  ];
+const Categories = ({ categories }) => {
+  const navigate = useNavigate();
+
+  const categoryHandler = (value) => {
+    navigate(`?category=${value}`);
+  };
 
   return (
     <div className="mt-5">
@@ -52,9 +20,10 @@ const Categories = () => {
         }}
       />
       <div>
-        {cats.map(({ id, name, amount }) => {
+        {categories.map(({ id, name, amount, value }) => {
           return (
-            <div
+            <button
+              onClick={() => categoryHandler(value)}
               className="flex justify-between items-center cursor-pointer p-3 hover:bg-orange-600 hover:text-white rounded-lg w-full"
               key={id}
             >
@@ -64,7 +33,7 @@ const Categories = () => {
               <h1 className="bg-color-search-bg w-8 h-8 rounded-md flex items-center justify-center font-bold text-secondary/[0.7]">
                 {amount}
               </h1>
-            </div>
+            </button>
           );
         })}
       </div>

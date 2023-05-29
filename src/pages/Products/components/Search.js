@@ -1,9 +1,13 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 
-const ProductSearch = () => {
+const Search = () => {
   return (
-    <div className="flex xl:justify-center md:justify-start justify-center">
+    <div
+      data-aos="fade-right"
+      data-aos-once="true"
+      className="flex xl:justify-center md:justify-start justify-center"
+    >
       <div className="xl:w-full md:w-fit w-full bg-color-search-bg md:p-8 p-4">
         <div className="flex w-full rounded-md overflow-hidden">
           <input
@@ -25,4 +29,4 @@ const ProductSearch = () => {
   );
 };
 
-export default ProductSearch;
+export default Search;

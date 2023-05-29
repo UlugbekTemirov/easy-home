@@ -27,6 +27,7 @@ function App() {
   const Products = lazy(() => import("./pages/Products"));
   const Product = lazy(() => import("./pages/Product"));
   const News = lazy(() => import("./pages/News"));
+  const SingleNews = lazy(() => import("./pages/SingleNews"));
   const NotFound = lazy(() => import("./pages/NotFound"));
 
   useEffect(() => {
@@ -57,6 +58,10 @@ function App() {
     {
       path: "/news",
       element: News,
+    },
+    {
+      path: "/news/:slug",
+      element: SingleNews,
     },
     {
       path: "/products/:slug",

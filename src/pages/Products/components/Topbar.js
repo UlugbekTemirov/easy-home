@@ -1,6 +1,6 @@
 import React from "react";
 import Translate from "../../../utils/Translate";
-import products from "../../../products.db";
+import products from "../../../db/products.db";
 
 const Topbar = () => {
   const result = products.length;

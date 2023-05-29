@@ -22,7 +22,7 @@ const MyModal = ({ children, opened, close, className }) => {
         />
         <div
           data-aos="fade-up"
-          className={`bg-white rounded-xl p-5 ${className}`}
+          className={`bg-white rounded-xl xl:p-10 p-5 ${className}`}
         >
           {children}
         </div>

@@ -47,7 +47,7 @@ const ProductDetails = ({ product }) => {
   };
 
   return (
-    <div>
+    <div className="">
       <h1 className="font-black text-4xl text-secondary tracking-wider">
         <Translate dictionary={title} />
       </h1>
@@ -58,7 +58,7 @@ const ProductDetails = ({ product }) => {
         <p className="text-2xl text-gray-400">(${price[1].amount})</p>
       </div>
       <div>
-        <p className="text-gray-700 mt-5 text-xl">
+        <p className="text-gray-500 mt-5 text-xl">
           <Translate dictionary={description} />
         </p>
         <div className="flex gap-5 items-center pt-10">

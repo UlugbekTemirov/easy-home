@@ -1,16 +1,19 @@
 import React from "react";
 
 // components
-import ProductSearch from "./ProductSearch";
-import Categories from "./Categories";
+import Search from "./Search";
+import Categories from "../../../components/Categories";
 import PriceFilter from "./PriceFilter";
+
+// db
+import { product_cats } from "../../../db/categories.db";
 
 const Sidebar = () => {
   return (
     <div className="w-full">
-      <ProductSearch />
+      <Search />
       <div className="grid xl:grid-cols-1 md:grid-cols-2 xl:gap-0 gap-5 xl:pt-5">
-        <Categories />
+        <Categories categories={product_cats} />
         <PriceFilter />
       </div>
     </div>

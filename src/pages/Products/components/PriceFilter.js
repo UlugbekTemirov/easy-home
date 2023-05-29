@@ -1,5 +1,5 @@
 import React from "react";
-import MiniHeader from "./MiniHeader";
+import MiniHeader from "../../../components/MiniHeader";
 import "rc-slider/assets/index.css";
 import Slider from "rc-slider";
 import { setRange } from "../../../redux/filter.slice";

@@ -1,5 +1,3 @@
-import React from "react";
-
 const PriceFormatter = ({ amount }) => {
   function convertToDotFormat(number) {
     const numberString = String(number);

@@ -8,9 +8,71 @@ const products = [
     },
     category: [
       {
-        en: "Sockets",
-        ru: "Розетки",
-        uz: "Rozetkalar",
+        id: 1,
+        value: "sockets",
+        translations: {
+          en: "Sockets",
+          ru: "Розетки",
+          uz: "Rozetkalar",
+        },
+      },
+    ],
+    details: [
+      {
+        name: {
+          en: "Model",
+          ru: "Модель",
+          uz: "Model",
+        },
+        value: "HDL-M/MHR17U.1",
+      },
+      {
+        name: {
+          en: "SKU",
+          ru: "Артикул",
+          uz: "SKU",
+        },
+        value: "835101",
+      },
+      {
+        name: {
+          en: "Bus Power",
+          ru: "Питание шины",
+          uz: "Bus Power",
+        },
+        value: "14 mA",
+      },
+      {
+        name: {
+          en: "Width",
+          ru: "Ширина",
+          uz: "Kenglik",
+        },
+        value: "144 mm",
+      },
+      {
+        name: {
+          en: "Height",
+          ru: "Высота",
+          uz: "Balandlik",
+        },
+        value: "90 mm",
+      },
+      {
+        name: {
+          en: "Depth",
+          ru: "Глубина",
+          uz: "Chuqurlik",
+        },
+        value: "64 mm",
+      },
+      {
+        name: {
+          en: "Weight",
+          ru: "Вес",
+          uz: "Ves",
+        },
+        value: "469 g",
       },
     ],
     documents: [
@@ -81,11 +143,49 @@ const products = [
         url: "https://drive.google.com/file/d/1-JRBKB3LoEP8WnOIYKIbdZs8G1exCoOt/view?usp=sharing",
       },
     ],
+    details: [
+      {
+        name: {
+          en: "Brand",
+          ru: "Бренд",
+          uz: "Brend",
+        },
+        value: "Mennekes",
+      },
+      {
+        name: {
+          en: "Model",
+          ru: "Модель",
+          uz: "Model",
+        },
+        value: "AMTRON® Xtra 22 C2",
+      },
+      {
+        name: {
+          en: "Type",
+          ru: "Тип",
+          uz: "Turi",
+        },
+        value: "Socket",
+      },
+      {
+        name: {
+          en: "Color",
+          ru: "Цвет",
+          uz: "Rangi",
+        },
+        value: "White",
+      },
+    ],
     category: [
       {
-        en: "Sockets",
-        ru: "Розетки",
-        uz: "Rozetkalar",
+        id: 2,
+        value: "sockets",
+        translations: {
+          en: "Sockets",
+          ru: "Розетки",
+          uz: "Rozetkalar",
+        },
       },
     ],
     price: [
@@ -123,6 +223,7 @@ const products = [
         },
         url: "https://drive.google.com/file/d/1-JRBKB3LoEP8WnOIYKIbdZs8G1exCoOt/view?usp=sharing",
       },
+
       {
         title: {
           en: "Product 3 document 2",
@@ -132,16 +233,34 @@ const products = [
         url: "https://drive.google.com/file/d/1-JRBKB3LoEP8WnOIYKIbdZs8G1exCoOt/view?usp=sharing",
       },
     ],
+    details: [
+      {
+        name: {
+          en: "Brand",
+          ru: "Бренд",
+          uz: "Brend",
+        },
+        value: "Mennekes",
+      },
+    ],
     category: [
       {
-        en: "Sockets",
-        ru: "Розетки",
-        uz: "Rozetkalar",
+        id: 3,
+        value: "switches",
+        translations: {
+          en: "Sockets",
+          ru: "Розетки",
+          uz: "Rozetkalar",
+        },
       },
       {
-        en: "KNX",
-        ru: "KNX",
-        uz: "KNX",
+        id: 4,
+        value: "knx",
+        translations: {
+          en: "KNX",
+          ru: "KNX",
+          uz: "KNX",
+        },
       },
     ],
     price: [
@@ -188,11 +307,25 @@ const products = [
         url: "https://drive.google.com/file/d/1-JRBKB3LoEP8WnOIYKIbdZs8G1exCoOt/view?usp=sharing",
       },
     ],
+    details: [
+      {
+        name: {
+          en: "Brand",
+          ru: "Бренд",
+          uz: "Brend",
+        },
+        value: "Mennekes",
+      },
+    ],
     category: [
       {
-        en: "KNX",
-        ru: "KNX",
-        uz: "KNX",
+        id: 6,
+        value: "knx",
+        translations: {
+          en: "KNX",
+          ru: "KNX",
+          uz: "KNX",
+        },
       },
     ],
     price: [
@@ -239,11 +372,25 @@ const products = [
         url: "https://drive.google.com/file/d/1-JRBKB3LoEP8WnOIYKIbdZs8G1exCoOt/view?usp=sharing",
       },
     ],
+    details: [
+      {
+        name: {
+          en: "Brand",
+          ru: "Бренд",
+          uz: "Brend",
+        },
+        value: "Mennekes",
+      },
+    ],
     category: [
       {
-        en: "Others",
-        ru: "Другие",
-        uz: "Boshqalar",
+        id: 8,
+        value: "others",
+        translations: {
+          en: "Others",
+          ru: "Другие",
+          uz: "Boshqalar",
+        },
       },
     ],
     price: [

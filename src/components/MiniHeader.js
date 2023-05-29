@@ -1,5 +1,5 @@
 import React from "react";
-import Translate from "../../../utils/Translate";
+import Translate from "../utils/Translate";
 
 const MiniHeader = ({ title }) => {
   return (

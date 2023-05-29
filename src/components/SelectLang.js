@@ -26,7 +26,8 @@ const SelectLang = () => {
 
   useEffect(() => {
     const path = location.pathname.slice(4);
-    navigate(`/${lang}/${path}`, { replace: true });
+    const { search } = location;
+    navigate(`/${lang}/${path}${search}`, { replace: true });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lang]);

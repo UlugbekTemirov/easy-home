@@ -17,3 +17,7 @@ body {
 h1 {
   padding-top: 4px;
 }
+
+.post:hover .post-text {
+  color: #ff1f59;
+}

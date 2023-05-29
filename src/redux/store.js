@@ -9,4 +9,6 @@ export const store = configureStore({
     filter,
     product,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+  devTools: process.env.NODE_ENV !== "production",
 });
