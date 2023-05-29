@@ -7,7 +7,8 @@ const Categories = ({ categories }) => {
   const navigate = useNavigate();
 
   const categoryHandler = (value) => {
-    navigate(`?category=${value}`);
+    if (value === "all") return navigate("/");
+    else navigate(`?category=${value}`);
   };
 
   return (
