@@ -9,7 +9,16 @@ import ShareButton from "./ShareButton";
 import Translate from "../../../utils/Translate";
 import DateFormatter from "../../../utils/DateFormatter";
 
-const NewsCard = ({ image, id, categories, slug, title, content, date }) => {
+const NewsCard = ({
+  image,
+  id,
+  categories,
+  slug,
+  title,
+  content,
+  date,
+  description,
+}) => {
   const [modal, setModal] = useState(false);
 
   return (
@@ -47,13 +56,13 @@ const NewsCard = ({ image, id, categories, slug, title, content, date }) => {
                 <Translate dictionary={title} />
               </h1>
               <p className="truncate mt-2 text-secondary/[0.9] text-lg">
-                <Translate dictionary={content} />
+                <Translate dictionary={description} />
               </p>
             </div>
             <div className="flex justify-between items-center mt-5">
               <button
                 type="button"
-                className="text-orange-600 duration-200 text-xl font-bold"
+                className="text-main duration-200 text-xl font-bold"
               >
                 Read more
               </button>

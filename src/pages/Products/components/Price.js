@@ -8,7 +8,7 @@ const Price = ({ price }) => {
 
   return (
     <div className="flex justify-center items-center gap-3">
-      <p className="text-center text-orange-600 font-bold text-[22px]">
+      <p className="text-center text-main font-bold text-[22px]">
         {findTargetCurrency(price, "uzs").amount} so'm
       </p>
       <p className="text-center text-secondary/[0.4] text-xl">

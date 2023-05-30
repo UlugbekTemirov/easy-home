@@ -31,7 +31,7 @@ const Footer = () => {
     },
   ];
 
-  const { lang } = useSelector((state) => state.selectLang);
+  const { lang } = useSelector((state) => state.navbar);
 
   return (
     <div className="bg-[#101C32] pt-[80px] pb-5">

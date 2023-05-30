@@ -65,14 +65,14 @@ const Post = ({ title, image, date, slug }) => {
   );
 };
 
-const RecentPosts = ({ posts = recent_posts }) => {
+const FeaturedPosts = ({ posts = recent_posts }) => {
   return (
     <div className="mt-5">
       <MiniHeader
         title={{
-          en: "Recent Posts",
-          ru: "Последние посты",
-          uz: "So'nggi xabarlar",
+          en: "Featured Posts",
+          ru: "Рекомендуемые Новости",
+          uz: "Maxsus Yangiliklar",
         }}
       />
       <div className="flex flex-col items-center justify-center">
@@ -84,4 +84,4 @@ const RecentPosts = ({ posts = recent_posts }) => {
   );
 };
 
-export default RecentPosts;
+export default FeaturedPosts;

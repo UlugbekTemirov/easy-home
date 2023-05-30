@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Logo = () => {
-  const { lang } = useSelector((state) => state.selectLang);
+  const { lang } = useSelector((state) => state.navbar);
 
   return (
     <Link to={`${lang}`}>

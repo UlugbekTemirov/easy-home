@@ -23,18 +23,20 @@ const Categories = ({ categories }) => {
       <div>
         {categories.map(({ id, name, amount, value }) => {
           return (
-            <button
-              onClick={() => categoryHandler(value)}
-              className="flex justify-between items-center cursor-pointer p-3 hover:bg-orange-600 hover:text-white rounded-lg w-full"
-              key={id}
-            >
-              <h1 className="font-semibold text-xl">
-                <Translate dictionary={name} />
-              </h1>
-              <h1 className="bg-color-search-bg w-8 h-8 rounded-md flex items-center justify-center font-bold text-secondary/[0.7]">
-                {amount}
-              </h1>
-            </button>
+            <div className="border-b-2">
+              <button
+                onClick={() => categoryHandler(value)}
+                className="flex justify-between items-center cursor-pointer p-3 hover:bg-main hover:text-white rounded-lg w-full"
+                key={id}
+              >
+                <h1 className="font-semibold text-xl">
+                  <Translate dictionary={name} />
+                </h1>
+                <h1 className="bg-blue-100 w-8 h-8 rounded-md flex items-center justify-center font-bold text-secondary/[0.7]">
+                  {amount}
+                </h1>
+              </button>
+            </div>
           );
         })}
       </div>

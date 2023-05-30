@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import BgCover from "../../components/BgCover";
+import NewsWrapper from "./components/NewsWrapper";
 
 const Index = () => {
   const { slug } = useParams();
@@ -17,6 +18,7 @@ const Index = () => {
           uz: "Lorem ipsum dolor sit amet consectetur.",
         }}
       />
+      <NewsWrapper slug={slug} />
     </div>
   );
 };

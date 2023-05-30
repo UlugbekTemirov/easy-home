@@ -1,22 +1,23 @@
 import React from "react";
 
 // components
-import Search from "../../Products/components/Search";
-import RecentPosts from "./RecentPosts";
+import FeaturedPosts from "./FeaturedPosts";
 import Categories from "../../../components/Categories";
+import Search from "../../../components/Search";
 
 // db
 import { news_cats } from "../../../db/categories.db";
+import { categoryAllHandler } from "../../../utils/helpers";
 
 const Sidebar = () => {
   return (
     <div className="sticky top-10 left-0 ">
       <Search />
       <div className="xl:mt-10">
-        <RecentPosts />
+        <FeaturedPosts />
       </div>
       <div className="xl:mt-10">
-        <Categories categories={news_cats} />
+        <Categories categories={categoryAllHandler(news_cats, 45)} />
       </div>
     </div>
   );

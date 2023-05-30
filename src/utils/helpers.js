@@ -30,3 +30,22 @@ export const category_colors = [
   "bg-indigo-500",
   "bg-gray-500",
 ];
+
+export const RANGE_COLOR = "#710193";
+export const SHARE_BUTTON_COLOR = "#710193";
+
+export const categoryAllHandler = (categories, amount) => {
+  return [
+    {
+      id: "all-category",
+      name: {
+        en: "All",
+        ru: "Все",
+        uz: "Hammasi",
+      },
+      slug: "all",
+      amount: amount,
+    },
+    ...categories,
+  ];
+};
