@@ -17,10 +17,10 @@ const Index = () => {
       <main className="py-10">
         <div className="container">
           <div className="grid md:grid-cols-10 grid-cols-1 gap-10">
-            <div className="md:col-span-7">
+            <div className="xl:col-span-7 md:col-span-6">
               <NewsList />
             </div>
-            <div className="md:col-span-3">
+            <div className="xl:col-span-3 md:col-span-4">
               <Sidebar />
             </div>
           </div>

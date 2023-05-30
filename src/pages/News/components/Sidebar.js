@@ -10,7 +10,7 @@ import { news_cats } from "../../../db/categories.db";
 
 const Sidebar = () => {
   return (
-    <div>
+    <div className="sticky top-10 left-0 ">
       <Search />
       <div className="xl:mt-10">
         <RecentPosts />
