@@ -6,6 +6,9 @@ import { setRange } from "../../../redux/filter.slice";
 import { useSelector, useDispatch } from "react-redux";
 import PriceFormatter from "../../../utils/PriceFormatter";
 
+// helpers
+import { RANGE_COLOR } from "../../../utils/helpers";
+
 const PriceFilter = () => {
   const { range } = useSelector((state) => state.filter);
   const dispatch = useDispatch();
@@ -28,7 +31,7 @@ const PriceFilter = () => {
           className="cursor-pointer"
           trackStyle={[
             {
-              backgroundColor: "#FF1F59",
+              backgroundColor: RANGE_COLOR,
               height: 10,
               marginTop: -3,
             },
@@ -37,26 +40,17 @@ const PriceFilter = () => {
           max={10000000}
           step={50000}
           range
-          handleStyle={[
-            {
-              borderColor: "#FF1F59",
-              backgroundColor: "#FF1F59",
+          handleStyle={[0, 1].map((item) => {
+            return {
+              borderColor: RANGE_COLOR,
+              backgroundColor: RANGE_COLOR,
               opacity: 1,
               height: 20,
               width: 20,
               marginTop: -8,
               boxShadow: "none",
-            },
-            {
-              borderColor: "#FF1F59",
-              backgroundColor: "#FF1F59",
-              opacity: 1,
-              height: 20,
-              width: 20,
-              marginTop: -8,
-              boxShadow: "none",
-            },
-          ]}
+            };
+          })}
           value={range}
           defaultValue={[0, 1000000]}
           onChange={rangeHandler}

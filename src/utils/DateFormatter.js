@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 // import { months } from "../db/months.db";
 
 const DateFormatter = ({ date }) => {
-  const { lang } = useSelector((state) => state.selectLang);
+  const { lang } = useSelector((state) => state.navbar);
 
   const dateObj = new Date(date);
   const month = dateObj.toLocaleString(lang, { month: "long" });

@@ -52,7 +52,7 @@ const ProductDetails = ({ product }) => {
         <Translate dictionary={title} />
       </h1>
       <div className="flex items-center gap-5 mt-5">
-        <p className="text-3xl text-orange-600 font-semibold">
+        <p className="text-3xl text-main font-semibold">
           {price[0].amount} so'm
         </p>
         <p className="text-2xl text-gray-400">(${price[1].amount})</p>
@@ -63,7 +63,7 @@ const ProductDetails = ({ product }) => {
         </p>
         <div className="flex gap-5 items-center pt-10">
           <a
-            className="bg-orange-600 hover:shadow-xl duration-300 w-[200px] text-center pt-4 pb-3 rounded-lg tracking-wider text-xl font-semibold text-white inline-block"
+            className="bg-main hover:shadow-xl duration-300 w-[200px] text-center pt-4 pb-3 rounded-lg tracking-wider text-xl font-semibold text-white inline-block"
             href="tel:+998936563672"
           >
             <Translate
@@ -96,7 +96,7 @@ const ProductDetails = ({ product }) => {
         <div>
           <div className="grid grid-cols-2 rounded-xl overflow-hidden relative z-[1] border mt-2">
             <div
-              className={`absolute w-1/2 bg-orange-600 h-full rounded-xl -z-[1] duration-300 ${
+              className={`absolute w-1/2 bg-main h-full rounded-xl -z-[1] duration-300 ${
                 tab === "params" ? "translate-x-0" : "translate-x-full"
               }`}
             ></div>

@@ -69,7 +69,7 @@ const BgCover = ({ image, title }) => {
                   }`}
                 >
                   <Link
-                    className="capitalize text-secondary text-[20px] pt-1 font-semibold hover:text-orange-600"
+                    className="capitalize text-secondary text-[20px] pt-1 font-semibold hover:text-main"
                     to={link}
                   >
                     {name}

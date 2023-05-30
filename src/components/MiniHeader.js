@@ -7,7 +7,7 @@ const MiniHeader = ({ title }) => {
       <h1 className="font-bold text-2xl text-secondary pt-1">
         <Translate dictionary={title} />
       </h1>
-      <span className="bg-orange-600 h-[2.8px] w-10 inline-block rounded-xl"></span>
+      <span className="bg-main h-[2.8px] w-10 inline-block rounded-xl"></span>
     </div>
   );
 };

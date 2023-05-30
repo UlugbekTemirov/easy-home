@@ -6,10 +6,8 @@ module.exports = {
       colors: {
         primary: "#1b2336",
         secondary: "#29303B",
-        orange: {
-          600: "#FF1F59",
-        },
-        "color-search-bg": "#EDEFF7",
+        main: "#710193",
+        search: "#16839c",
       },
       boxShadow: {
         "product-card": "0 20px 50px rgb(0 0 0 / 5%)",

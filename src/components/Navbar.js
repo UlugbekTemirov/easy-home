@@ -16,7 +16,8 @@ import HamburgerButton from "./Hamburger";
 import Logo from "./Logo";
 
 // redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setNavbarHidden } from "../redux/navbar.slice";
 
 const links = [
   {
@@ -71,10 +72,12 @@ const Navbar = () => {
   const [top, setTop] = useState(0);
   const [downScroll, setDownScroll] = useState(false);
 
+  const dispatch = useDispatch();
+
   const close = () => {
     setNavbar(false);
   };
-  const { lang } = useSelector((state) => state.selectLang);
+  const { lang } = useSelector((state) => state.navbar);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,8 +85,10 @@ const Navbar = () => {
       setTop(a);
       if (a > top) {
         setDownScroll(true);
+        dispatch(setNavbarHidden(true));
       } else {
         setDownScroll(false);
+        dispatch(setNavbarHidden(false));
       }
     };
     window.addEventListener("scroll", handleScroll);
@@ -100,7 +105,7 @@ const Navbar = () => {
         className={`${
           top > 50 ? "bg-white/[0.8] shadow-2xl" : "bg-transparent"
         } h-[80px] duration-500 flex items-center fixed rounded-b-[0px] ${
-          downScroll ? "-top-[80px]" : "top-0"
+          downScroll ? "-top-[80px] shadow-none" : "top-0"
         } w-full z-[200]`}
       >
         <Container>
@@ -118,7 +123,7 @@ const Navbar = () => {
                     key={id}
                     to={`${lang}${path}`}
                     onClick={close}
-                    className="text-primary text-[16px] font-bold uppercase hover:text-orange-600 duration-200"
+                    className="text-primary text-[16px] font-bold uppercase hover:text-main duration-200"
                   >
                     <Translate dictionary={name} />
                   </Link>

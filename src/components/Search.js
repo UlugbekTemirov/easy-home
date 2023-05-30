@@ -8,7 +8,7 @@ const Search = () => {
       data-aos-once="true"
       className="flex xl:justify-center md:justify-start justify-center"
     >
-      <div className="xl:w-full md:w-fit w-full bg-color-search-bg md:p-8 p-4">
+      <div className="xl:w-full md:w-fit w-full bg-search md:p-8 p-4">
         <div className="flex w-full rounded-md overflow-hidden">
           <input
             id="search"
