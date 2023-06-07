@@ -33,8 +33,10 @@ const Footer = () => {
 
   const { lang } = useSelector((state) => state.navbar);
 
+  // #101C32 # previous footer color
+
   return (
-    <div className="bg-[#101C32] pt-[80px] pb-5">
+    <div className="bg-footer pt-[80px] pb-5">
       <Container>
         <div className="grid md:grid-cols-4 grid-cols-1">
           <div>

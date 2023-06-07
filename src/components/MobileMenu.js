@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Translate from "../utils/Translate";
 
 // components
-import Search from "./Search";
+import GlobalSearch from "./GlobalSearch";
 import { useEffect } from "react";
 import HamburgerButton from "./Hamburger";
 import Logo from "./Logo";
@@ -44,7 +44,7 @@ const MobileMenu = ({ open, routes, close }) => {
             <HamburgerButton onClick={close} open={open} dark={true} />
           </div>
           <div className="mb-5">
-            <Logo />
+            <Logo onClick={close} />
           </div>
           <div className="flex flex-col gap-5 text-secondary">
             {routes.map(({ id, name, path }) => (
@@ -54,7 +54,7 @@ const MobileMenu = ({ open, routes, close }) => {
             ))}
           </div>
           <div>
-            <Search />
+            <GlobalSearch />
           </div>
         </div>
         <div>

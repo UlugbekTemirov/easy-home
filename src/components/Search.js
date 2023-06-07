@@ -4,7 +4,7 @@ import { BsSearch } from "react-icons/bs";
 const Search = () => {
   return (
     <div
-      data-aos="fade-right"
+      data-aos="fade-up"
       data-aos-once="true"
       className="flex xl:justify-center md:justify-start justify-center"
     >
