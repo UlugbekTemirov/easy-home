@@ -8,6 +8,8 @@ module.exports = {
         secondary: "#29303B",
         main: "#710193",
         search: "#16839c",
+        btnPink: "#ff1f59",
+        form: "#f8faff",
       },
       boxShadow: {
         "product-card": "0 20px 50px rgb(0 0 0 / 5%)",
