@@ -15,7 +15,7 @@ const NewsWrapper = ({ slug }) => {
   return (
     <div className="py-10">
       <Container>
-        <div className="grid md:grid-cols-10 grid-cols-2 gap-20">
+        <div className="grid md:grid-cols-10 grid-cols-1 md:gap-20 gap-5">
           <div className="md:col-span-7">
             <Content {...item} />
           </div>
