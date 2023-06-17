@@ -1,6 +1,7 @@
 import React from "react";
 import BgCover from "../../components/BgCover";
 import Container from "../../layout/Container";
+import TeamMembers from "./components/TeamMembers";
 
 const Index = () => {
   return (
