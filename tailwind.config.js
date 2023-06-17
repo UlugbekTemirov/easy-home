@@ -8,12 +8,9 @@ module.exports = {
         secondary: "#29303B",
         main: "#710193",
         search: "#16839c",
-<<<<<<< HEAD
         footer: "#2e3440",
-=======
         btnPink: "#ff1f59",
         form: "#f8faff",
->>>>>>> e008aed (about page created)
       },
       boxShadow: {
         "product-card": "0 20px 50px rgb(0 0 0 / 5%)",
