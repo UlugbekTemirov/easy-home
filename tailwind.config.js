@@ -8,6 +8,7 @@ module.exports = {
         secondary: "#29303B",
         main: "#710193",
         search: "#16839c",
+        footer: "#2e3440",
       },
       boxShadow: {
         "product-card": "0 20px 50px rgb(0 0 0 / 5%)",
@@ -15,7 +16,7 @@ module.exports = {
       },
       container: {
         center: true,
-        padding: "1rem",
+        padding: "12px",
       },
     },
   },

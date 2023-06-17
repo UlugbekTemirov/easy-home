@@ -39,15 +39,15 @@ const BgCover = ({ image, title }) => {
       data-aos="fade-up"
       data-aos-delay="10"
       style={config}
-      className="h-[480px] w-full"
+      className="md:h-[480px] w-full h-[340px]"
     >
       <div className=" bg-white/[0.7] w-full h-full flex justify-center items-center">
-        <div>
+        <div className="px-3 pt-8 md:p-0">
           <h1
             data-aos="fade-up"
             data-aos-delay="100"
             data-aos-duration="800"
-            className="font-bold text-5xl tracking-[5px] text-primary mb-8 text-center"
+            className="font-bold md:text-5xl text-3xl tracking-[5px] text-primary md:mb-8 mb-4 text-center"
           >
             <Translate dictionary={title} />
           </h1>

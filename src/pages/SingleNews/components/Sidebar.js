@@ -1,17 +1,18 @@
 import React from "react";
-import Shareline from "./Shareline";
+import SharePost from "./SharePost";
 import Translate from "../../../utils/Translate";
 
 import { useSelector } from "react-redux";
+import Newsletter from "./Newsletter";
 
 const Sidebar = () => {
   const { is_navbar_hidden } = useSelector((state) => state.navbar);
 
   return (
-    <div className="h-full grid grid-rows-2 pb-20">
-      <div className="row-span-1 pb-[100px]">
+    <div className="h-full grid grid-rows-2 md:pb-20">
+      <div className="row-span-1 md:pb-[100px] pb-10">
         <div
-          className={`sticky duration-200 ${
+          className={`md:sticky duration-200 ${
             is_navbar_hidden ? "top-10" : "top-[120px]"
           }`}
         >
@@ -24,25 +25,16 @@ const Sidebar = () => {
               }}
             />
           </p>
-          <h1 className="font-semibold text-[22px] mb-2 text-primary">
-            <Translate
-              dictionary={{
-                en: "Share this post :",
-                ru: "Поделиться этой статьей :",
-                uz: "Bu postni ulashish :",
-              }}
-            />
-          </h1>
-          <Shareline />
+          <SharePost />
         </div>
       </div>
       <div>
         <div
-          className={`sticky duration-200 ${
+          className={`md:sticky duration-200 ${
             is_navbar_hidden ? "top-10" : "top-[120px]"
           }`}
         >
-          <h1>Newsletter</h1>
+          <Newsletter />
         </div>
       </div>
     </div>

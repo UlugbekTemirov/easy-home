@@ -123,7 +123,7 @@ const Navbar = () => {
                     key={id}
                     to={`${lang}${path}`}
                     onClick={close}
-                    className="text-primary text-[16px] font-bold uppercase hover:text-main duration-200"
+                    className="text-primary border border-transparent text-[16px] font-bold uppercase py-[5px] hover:border-b-main duration-200"
                   >
                     <Translate dictionary={name} />
                   </Link>
