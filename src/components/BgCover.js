@@ -6,7 +6,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import Translate from "../utils/Translate";
 
 const ArrowRight = () => {
-  return <MdKeyboardArrowRight className="text-gray-600" size={22} />;
+  return <MdKeyboardArrowRight className="text-white md:mx-2" size={22} />;
 };
 
 const BgCover = ({ image, title }) => {
@@ -41,13 +41,13 @@ const BgCover = ({ image, title }) => {
       style={config}
       className="md:h-[480px] w-full h-[340px]"
     >
-      <div className=" bg-white/[0.7] w-full h-full flex justify-center items-center">
+      <div className=" bg-black/[0.5] w-full h-full flex justify-center items-center">
         <div className="px-3 pt-8 md:p-0">
           <h1
             data-aos="fade-up"
             data-aos-delay="100"
             data-aos-duration="800"
-            className="font-bold md:text-5xl text-3xl tracking-[5px] text-primary md:mb-8 mb-4 text-center"
+            className="font-bold md:text-5xl text-3xl tracking-[5px] text-white md:mb-8 mb-4 text-center"
           >
             <Translate dictionary={title} />
           </h1>
@@ -69,12 +69,14 @@ const BgCover = ({ image, title }) => {
                   }`}
                 >
                   <Link
-                    className="capitalize text-secondary text-[20px] pt-1 font-semibold hover:text-main"
+                    className="capitalize text-white text-[20px] pt-1 font-semibold"
                     to={link}
                   >
                     {name}
                   </Link>
-                  {index !== getLocations().length - 1 ? <ArrowRight /> : null}
+                  {index !== getLocations().length - 1 ? (
+                    <ArrowRight color="white" />
+                  ) : null}
                 </div>
               );
             })}

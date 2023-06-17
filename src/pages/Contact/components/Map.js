@@ -16,7 +16,7 @@ function Map() {
 
   return (
     <MapContainer
-      className="h-full"
+      className="h-full z-10"
       center={position}
       zoom={13}
       scrollWheelZoom={false}

@@ -18,6 +18,10 @@ import Main from "./layout/Main";
 
 // utils
 import LanguageRoute from "./utils/LanguageRoute";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/swiper-bundle.css";
 
 function App() {
   const Home = lazy(() => import("./pages/Home"));

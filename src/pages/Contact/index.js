@@ -17,7 +17,7 @@ const Index = () => {
             <div
               data-aos="fade-up"
               data-aos-delay="10"
-              className="h-[500px] col-span-1"
+              className="md:h-[500px] h-[300px] col-span-1"
               id="map"
             >
               <Map />

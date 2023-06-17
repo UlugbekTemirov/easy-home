@@ -13,9 +13,9 @@ const Index = () => {
       />
       <Container>
         <div className="py-10">
-          <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+          <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-10 gap-5">
             {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+              <ServiceCard key={index} index={index} {...service} />
             ))}
           </div>
         </div>

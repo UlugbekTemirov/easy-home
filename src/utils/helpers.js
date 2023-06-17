@@ -19,6 +19,11 @@ export const categorySearchHandler = (category, location, navigate) => {
   navigate(`?${params.toString()}`);
 };
 
+export const findTargetItemHandler = (slug, data) => {
+  const item = data.find((el) => el.slug === slug);
+  return item;
+};
+
 export const category_colors = [
   "bg-red-500",
   "bg-green-500",
