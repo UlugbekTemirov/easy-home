@@ -18,6 +18,10 @@ import Main from "./layout/Main";
 
 // utils
 import LanguageRoute from "./utils/LanguageRoute";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/swiper-bundle.css";
 
 function App() {
   const Home = lazy(() => import("./pages/Home"));
@@ -28,6 +32,7 @@ function App() {
   const Product = lazy(() => import("./pages/Product"));
   const News = lazy(() => import("./pages/News"));
   const SingleNews = lazy(() => import("./pages/SingleNews"));
+  const SingleService = lazy(() => import("./pages/SingleService"));
   const NotFound = lazy(() => import("./pages/NotFound"));
 
   useEffect(() => {
@@ -50,6 +55,10 @@ function App() {
     {
       path: "/services",
       element: Services,
+    },
+    {
+      path: "/services/:slug",
+      element: SingleService,
     },
     {
       path: "/products",

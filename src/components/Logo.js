@@ -7,7 +7,7 @@ const Logo = ({ onClick }) => {
 
   return (
     <Link onClick={onClick} to={`${lang}`}>
-      <h1 className=" font-extrabold text-2xl">LOGO</h1>
+      <h1 className=" font-extrabold text-2xl text-white">LOGO</h1>
       {/* <img
         className="w-[150px]"
         src="https://raistheme.com/wp/gostudy/wp-content/uploads/2021/05/gostudy-logo-dark.png"

@@ -9,6 +9,8 @@ module.exports = {
         main: "#710193",
         search: "#16839c",
         footer: "#2e3440",
+        btnPink: "#ff1f59",
+        form: "#f8faff",
       },
       boxShadow: {
         "product-card": "0 20px 50px rgb(0 0 0 / 5%)",
