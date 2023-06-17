@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 
-const Slider = ({ slides }) => {
+const GallerySlider = ({ slides }) => {
   const swiperRef = useRef(null);
 
   const goToNextSlide = () => {
@@ -47,4 +47,4 @@ const Slider = ({ slides }) => {
   );
 };
 
-export default Slider;
+export default GallerySlider;

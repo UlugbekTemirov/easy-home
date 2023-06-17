@@ -115,6 +115,14 @@ const services = [
           en: "Gas supply system",
         },
       },
+      {
+        id: 4,
+        title: {
+          uz: "Gaz tizimi",
+          ru: "Система газоснабжения",
+          en: "Gas supply system",
+        },
+      },
     ],
     image: "https://picsum.photos/seed/picsum/200/300",
     slug: "euromontaj",
