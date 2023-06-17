@@ -13,16 +13,20 @@ const Index = () => {
       />
       <Container>
         <main className="py-10 contact-main">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div
-              data-aos="fade-up"
+              data-aos="fade-right"
               data-aos-delay="10"
               className="h-[500px] col-span-1"
               id="map"
             >
               <Map />
             </div>
-            <div className="col-span-1">
+            <div
+              className="col-span-1"
+              data-aos="fade-left"
+              data-aos-delay="10"
+            >
               <ContactForm />
             </div>
           </div>
