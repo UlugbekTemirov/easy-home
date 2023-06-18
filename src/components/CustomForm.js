@@ -11,7 +11,7 @@ function CustomForm({
 }) {
   return (
     <form
-      className={`py-[60px] px-[45px] bg-form  ${className}`}
+      className={`py-[60px] px-[30px] md:px-[45px] bg-form  ${className}`}
       onSubmit={onsubmit}
     >
       <h1 className="text-3xl font-bold mb-5">
