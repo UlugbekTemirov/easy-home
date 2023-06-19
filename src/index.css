@@ -75,3 +75,53 @@ h1 {
     stroke-dashoffset: -163;
   }
 }
+
+.icon {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100%;
+  -webkit-mask-position: center;
+  vertical-align: middle;
+}
+
+.icon-phone {
+  -webkit-mask-image: url("./assets/icons/telephone-call.png");
+  mask-image: url("./assets/icons/telephone-call.png");
+  background-color: #fff;
+}
+.icon-email {
+  -webkit-mask-image: url("./assets/icons/mail.png");
+  mask-image: url("./assets/icons/mail.png");
+  background-color: #fff;
+}
+.icon-location {
+  -webkit-mask-image: url("./assets/icons/location-pin.png");
+  mask-image: url("./assets/icons/location-pin.png");
+  background-color: #fff;
+}
+.icon-product {
+  width: 80px;
+  height: 80px;
+  -webkit-mask-image: url("./assets/icons/product.png");
+  mask-image: url("./assets/icons/product.png");
+  background-color: #000;
+}
+.icon-customer {
+  width: 60px;
+  height: 60px;
+  -webkit-mask-image: url("./assets/icons/customer.png");
+  mask-image: url("./assets/icons/customer.png");
+  background-color: #000;
+}
+
+.two-line-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

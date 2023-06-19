@@ -24,12 +24,6 @@ function ContactForm() {
     ru: "Ваша электронная почта",
   };
 
-  const placeholderPhone = {
-    en: "Your phone number",
-    uz: "Sizning telefon raqamingiz",
-    ru: "Ваш номер телефона",
-  };
-
   const placeholderMessage = {
     en: "Your message",
     uz: "Sizning xabaringiz",
@@ -47,7 +41,6 @@ function ContactForm() {
       <CustomForm title={titleLang} className="">
         <FormInput placeholder={placeholderName} name={"name"} />
         <FormInput type="email" placeholder={placeholderEmail} name={"email"} />
-        {/* <FormInput type="text" placeholder={placeholderPhone} name={"phone"} /> */}
         <TelMask />
         <TextArea placeholder={placeholderMessage} name={"message"} />
         <PinkBtn value={sendLang} className="mt-5" />
