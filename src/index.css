@@ -50,6 +50,20 @@ h1 {
   mask-image: url("./assets/icons/location-pin.png");
   background-color: #fff;
 }
+.icon-product {
+  width: 80px;
+  height: 80px;
+  -webkit-mask-image: url("./assets/icons/product.png");
+  mask-image: url("./assets/icons/product.png");
+  background-color: #000;
+}
+.icon-customer {
+  width: 60px;
+  height: 60px;
+  -webkit-mask-image: url("./assets/icons/customer.png");
+  mask-image: url("./assets/icons/customer.png");
+  background-color: #000;
+}
 
 .two-line-text {
   display: -webkit-box;
