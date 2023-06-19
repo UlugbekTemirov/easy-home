@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { IoShareSocialSharp } from "react-icons/io5";
-import { AiOutlineCloseCircle } from "react-icons/ai";
 import telegram from "../../../assets/icons/telegram.svg";
 import instagram from "../../../assets/icons/instagram.svg";
 import facebook from "../../../assets/icons/facebook.svg";
@@ -18,6 +17,12 @@ const SocialLine = ({ socials, index, colors }) => {
     facebook,
   };
 
+  const iconClass = {
+    telegram: "icon-telegram",
+    instagram: "icon-instagram",
+    facebook: "icon-facebook",
+  };
+
   return (
     <div className="absolute top-1/2 -translate-y-1/2 right-5">
       {!socialLine && (
@@ -31,7 +36,12 @@ const SocialLine = ({ socials, index, colors }) => {
                 className="text-white text-2xl mb-3"
                 key={ind}
               >
-                <img key={index} src={icons[name]} alt="" />
+                <div
+                  className="w-[45px] h-[45px] rounded-full flex justify-center items-center"
+                  style={{ background: colors[index] }}
+                >
+                  <i className={`icon ${iconClass[name]}`}></i>
+                </div>
               </a>
             ))}
           </div>

@@ -3,6 +3,7 @@ import BgCover from "../../components/BgCover";
 import Container from "../../layout/Container";
 import AboutIntro from "./components/AboutIntro";
 import Works from "./components/Works";
+import TeamMembers from "./components/TeamMembers";
 
 const Index = () => {
   return (
@@ -22,6 +23,9 @@ const Index = () => {
         </main>
         <div className="about-works">
           <Works />
+        </div>
+        <div className="team py-16">
+          <TeamMembers />
         </div>
       </Container>
     </div>

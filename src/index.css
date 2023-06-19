@@ -119,6 +119,29 @@ h1 {
   background-color: #000;
 }
 
+.icon-telegram {
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url("./assets/icons/telegram.png");
+  mask-image: url("./assets/icons/telegram.png");
+  background-color: #fff;
+}
+
+.icon-instagram {
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url("./assets/icons/instagram.png");
+  mask-image: url("./assets/icons/instagram.png");
+  background-color: #fff;
+}
+.icon-facebook {
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url("./assets/icons/facebook-app-symbol.png");
+  mask-image: url("./assets/icons/facebook-app-symbol.png");
+  background-color: #fff;
+}
+
 .two-line-text {
   display: -webkit-box;
   -webkit-line-clamp: 2;

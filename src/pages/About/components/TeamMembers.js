@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import team from "../../../db/team.db";
+import { headers } from "../../../db/team.db";
 import Translate from "../../../utils/Translate";
 import SocialLine from "./SocialLine";
+console.log(headers);
 
 const TeamMembers = () => {
   const team_colors = [
@@ -17,18 +19,44 @@ const TeamMembers = () => {
 
   return (
     <div>
+      <div className="team-header mb-10">
+        <div className="header-line w-[80px] h-[2px] bg-btnPink"></div>
+        <h2
+          id="title"
+          className="text-3xl font-bold text-[#29303B] text-[30px] leading-[42px] mt-5"
+        >
+          <Translate dictionary={headers.title} />
+        </h2>
+      </div>
       <Swiper
         spaceBetween={40}
-        slidesPerView={4}
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
+        slidesPerView={1}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1023: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          1280: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+        }}
       >
         {team.map(({ full_name, position, image, socials }, index) => (
           <SwiperSlide
             style={{
               borderColor: team_colors[index],
             }}
-            className={`rounded-xl border-b-[8px] bg-[#F9F9F9] overflow-hidden`}
+            className={`rounded-xl rounded-b-sm border-b-[4px] bg-[#F9F9F9] overflow-hidden`}
             key={index}
           >
             <img className="w-full h-[350px]" src={image} alt="#" />
