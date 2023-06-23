@@ -13,7 +13,7 @@ const LanguageRoute = ({ children, route }) => {
 
   useEffect(() => {
     if (!languages.includes(param_lang)) {
-      navigate(`/en/${route}`, { replace: true });
+      navigate(`/en${route.path}`, { replace: true });
       return;
     }
 

@@ -13,7 +13,7 @@ const Index = () => {
       />
       <Container>
         <div className="py-10">
-          <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-10 gap-5">
+          <div className="flex flex-col gap-10">
             {services.map((service, index) => (
               <ServiceCard key={index} index={index} {...service} />
             ))}
@@ -25,3 +25,5 @@ const Index = () => {
 };
 
 export default Index;
+
+// className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-10 gap-5"
