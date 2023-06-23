@@ -4,7 +4,7 @@ const services = [
     title: {
       uz: "Euromontaj",
       ru: "Евромонтаж",
-      en: "Euromontaj",
+      en: "Euromontaj (electonics)",
     },
     key_features: [
       {
@@ -12,7 +12,7 @@ const services = [
         title: {
           uz: "Kanalizatsiya tizimi",
           ru: "Система канализации",
-          en: "Sewerage system",
+          en: "Sewerage system lorem ipsum dolor sit amet consectetur. adipisicing elit. ipsum dolor sit amet consectetur. ",
         },
       },
       {
@@ -20,11 +20,35 @@ const services = [
         title: {
           uz: "Suv tizimi",
           ru: "Система водоснабжения",
-          en: "Water supply system",
+          en: "Water supply system lorem ipsum dolor sit amet consectetur.",
         },
       },
       {
         id: 3,
+        title: {
+          uz: "Gaz tizimi",
+          ru: "Система газоснабжения",
+          en: "Gas supply system",
+        },
+      },
+      {
+        id: 4,
+        title: {
+          uz: "Gaz tizimi",
+          ru: "Система газоснабжения",
+          en: "Gas supply system",
+        },
+      },
+      {
+        id: 5,
+        title: {
+          uz: "Gaz tizimi",
+          ru: "Система газоснабжения",
+          en: "Gas supply system",
+        },
+      },
+      {
+        id: 6,
         title: {
           uz: "Gaz tizimi",
           ru: "Система газоснабжения",
