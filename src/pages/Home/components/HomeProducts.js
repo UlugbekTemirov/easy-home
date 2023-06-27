@@ -20,7 +20,7 @@ function HomeProducts() {
   return (
     <Container>
       <div className="mt-[65px]">
-        <div className="w-[600px] mx-auto">
+        <div className="md:w-[600px] mx-auto">
           <SectionHeader
             titleDict={titleDict}
             subtitleDict={subtitleDict}

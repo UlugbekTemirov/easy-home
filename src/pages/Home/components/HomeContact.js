@@ -20,8 +20,8 @@ function HomeContact() {
       }}
     >
       <Container>
-        <div className="flex items-center justify-end relative">
-          <div className="hidden md:block absolute right-[50%] bottom-[-80px] translate-x-[-50%]">
+        <div className="flex items-center justify-center xl:justify-end relative">
+          <div className="hidden xl:block absolute right-[50%] bottom-[-80px] translate-x-[-50%]">
             <img src={contactPhone} alt="" />
           </div>
           <CustomForm
