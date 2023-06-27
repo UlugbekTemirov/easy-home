@@ -141,10 +141,198 @@ h1 {
   mask-image: url("./assets/icons/facebook-app-symbol.png");
   background-color: #fff;
 }
+.icon-eye {
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url("./assets/icons/view.png");
+  mask-image: url("./assets/icons/view.png");
+  background-color: #fff;
+}
+.icon-prev {
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url("./assets/icons/back.png");
+  mask-image: url("./assets/icons/back.png");
+  background-color: #00c6ff;
+}
+.icon-next {
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url("./assets/icons/next.png");
+  mask-image: url("./assets/icons/next.png");
+  background-color: #00c6ff;
+}
 
 .two-line-text {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+.swiper-slide__content__title {
+  font-weight: 700;
+  background: -webkit-linear-gradient(0deg, #0045b7, #00c6ff);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.image-control {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  line-height: 120px;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+  background: #fff;
+  background-clip: border-box;
+  z-index: 0;
+  background-clip: padding-box;
+  border: solid 2px transparent;
+  transition: all 0.3s ease-in-out;
+}
+.image-control::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: inherit;
+  background: linear-gradient(to right, #0045b7, #00c6ff);
+  box-sizing: border-box;
+}
+.image-control a {
+  border-radius: 100%;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+.home-services {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+.gradient-btn.active::before,
+.gradient-btn:hover::before {
+  background-color: #00c6ff;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: inherit;
+  background: linear-gradient(to right, #0045b7, #00c6ff);
+  box-sizing: border-box;
+}
+
+.gradient-btn.active span,
+.gradient-btn:hover span {
+  color: #00c6ff;
+  background: -webkit-linear-gradient(0deg, #0045b7, #00c6ff);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-btn span {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 40px;
+  text-transform: uppercase;
+  line-height: 40px;
+}
+
+/* The card with gradient border on hover */
+.gradient-item--on-hover,
+.prev,
+.next,
+.see-all-btn {
+  border-radius: 10px;
+  border: 2px solid transparent;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+  background: #fff;
+  background-clip: padding-box;
+}
+.gradient-item--on-hover::before,
+.prev::before,
+.next::before,
+.see-all-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  box-sizing: border-box;
+}
+.gradient-item--on-hover:hover .image-box,
+.home-product:hover .image-box {
+  border-color: transparent;
+}
+
+.gradient-item--on-hover:hover .image-box .see-btn,
+.home-product:hover .image-box .see-btn {
+  opacity: 1;
+}
+
+.gradient-item--on-hover:hover::before,
+.home-product:hover .gradient-item--on-hover::before {
+  border-radius: 10px;
+  background-image: linear-gradient(90deg, #0045b7, #00c6ff);
+  margin: -2px;
+}
+
+.prev,
+.next,
+.see-all-btn {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0;
+}
+.prev:hover i,
+.next:hover i {
+  color: #fff;
+}
+.prev::before,
+.next::before,
+.see-all-btn::before {
+  border-radius: 5px;
+  background-image: linear-gradient(90deg, #0045b7, #00c6ff);
+  margin: -2px;
+}
+.see-all-btn {
+  width: 100%;
+  margin: 0;
+  border-radius: 5px;
+  padding: 20px 0;
+}
+
+/* write a style in phone the background shouldn't visibe */
+@media (max-width: 767px) {
+  .home-services {
+    background-image: none;
+  }
+}
+
+@media (min-width: 767px) {
+  .home-services {
+    background-image: url(./assets/images/bg-control.jpg);
+  }
 }

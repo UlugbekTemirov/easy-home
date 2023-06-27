@@ -18,7 +18,7 @@ const TeamMembers = () => {
   ];
 
   return (
-    <div>
+    <div data-aos="fade-up">
       <div className="team-header mb-10">
         <div className="header-line w-[80px] h-[2px] bg-btnPink"></div>
         <h2
