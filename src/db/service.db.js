@@ -6,6 +6,11 @@ const services = [
       ru: "Евромонтаж",
       en: "Euromontaj",
     },
+    description: {
+      en: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      ru: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      uz: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+    },
     key_features: [
       {
         id: 1,
@@ -43,7 +48,7 @@ const services = [
     ],
     content: `
     <h1>Header</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis maximus turpis. Maecenas sed orci dignissim, consectetur neque aliquet, venenatis velit. Fusce felis lacus, suscipit lacinia ullamcorper in, molestie sed sapien. Suspendisse vel urna aliquam, finibus ipsum sed, iaculis urna. Duis vestibulum non lacus et lobortis. Nam vitae sollicitudin felis. Donec nunc urna, eleifend et pulvinar nec, semper quis tortor. Nam at commodo tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque quis diam fringilla, fermentum sem nec, volutpat est. Nunc non erat magna. Fusce maximus pharetra risus porttitor consequat. Suspendisse egestas nulla orci, id tempus dolor lobortis non. Curabitur et elementum leo. Donec elementum felis in metus dapibus, at laoreet lectus iaculis. Morbi ut urna ac mi viverra pulvinar eget vitae nunc. Sed nec commodo purus.</p>
+    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis maximus turpis. Maecenas sed orci dignissim, consectetur neque aliquet, venenatis velit. Fusce felis lacus, suscipit lacinia ullamcorper in, molestie sed sapien. Suspendisse vel urna aliquam, finibus ipsum sed, iaculis urna. Duis vestibulum non lacus et lobortis. Nam vitae sollicitudin felis. Donec nunc urna, eleifend et pulvinar nec, semper quis tortor. Nam at commodo tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque quis diam fringilla, fermentum sem nec, volutpat est. Nunc non erat magna. Fusce maximus pharetra risus porttitor consequat. Suspendisse egestas nulla orci, id tempus dolor lobortis non. Curabitur et elementum leo. Donec elementum felis in metus dapibus, at laoreet lectus iaculis. Morbi ut urna ac mi viverra pulvinar eget vitae nunc. Sed nec commodo purus.</p>
     `,
     slug: "euromontaj",
   },
@@ -53,6 +58,11 @@ const services = [
       uz: "Euromontaj",
       ru: "Евромонтаж",
       en: "Euromontaj",
+    },
+    description: {
+      en: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      ru: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      uz: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     },
     key_features: [
       {
@@ -89,6 +99,11 @@ const services = [
       uz: "Euromontaj",
       ru: "Евромонтаж",
       en: "Euromontaj",
+    },
+    description: {
+      en: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      ru: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      uz: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     },
     key_features: [
       {
@@ -134,6 +149,11 @@ const services = [
       ru: "Евромонтаж",
       en: "Euromontaj",
     },
+    description: {
+      en: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      ru: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      uz: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+    },
     key_features: [
       {
         id: 1,
@@ -169,6 +189,11 @@ const services = [
       uz: "Euromontaj",
       ru: "Евромонтаж",
       en: "Euromontaj",
+    },
+    description: {
+      en: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      ru: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      uz: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     },
     key_features: [
       {

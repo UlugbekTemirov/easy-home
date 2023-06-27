@@ -1,14 +1,22 @@
 import React from "react";
-
-// layout
-import Container from "../../layout/Container";
+import HomeSwiper from "./components/HomeSwiper";
+import Services from "./components/Services";
+import HomeContact from "./components/HomeContact";
+import HomeProducts from "./components/HomeProducts";
 
 const Index = () => {
   return (
-    <div>
-      <Container>
-        <h1>Home</h1>
-      </Container>
+    <div className="home">
+      <HomeSwiper />
+      <section className="sample-services">
+        <Services />
+      </section>
+      <section className="home-contact">
+        <HomeContact />
+      </section>
+      <section className="home-products">
+        <HomeProducts />
+      </section>
     </div>
   );
 };

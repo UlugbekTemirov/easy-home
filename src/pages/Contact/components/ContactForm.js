@@ -4,46 +4,21 @@ import FormInput from "../../../components/FormInput";
 import TextArea from "../../../components/TextArea";
 import CustomForm from "../../../components/CustomForm";
 import TelMask from "../../../components/TelMask";
+import formDict from "../../../db/contactform.db";
 
-function ContactForm() {
-  const titleLang = {
-    en: "Contact us",
-    uz: "Biz bilan bog'laning",
-    ru: "Свяжитесь с нами",
-  };
-
-  const placeholderName = {
-    en: "Your name",
-    uz: "Sizning ismingiz",
-    ru: "Ваше имя",
-  };
-
-  const placeholderEmail = {
-    en: "Your email",
-    uz: "Sizning emailingiz",
-    ru: "Ваша электронная почта",
-  };
-
-  const placeholderMessage = {
-    en: "Your message",
-    uz: "Sizning xabaringiz",
-    ru: "Ваше сообщение",
-  };
-
-  const sendLang = {
-    en: "Send message",
-    uz: "Xabar yuborish",
-    ru: "Отправить сообщение",
-  };
-
+function ContactForm({ className = "" }) {
   return (
-    <div className="">
-      <CustomForm title={titleLang} className="">
-        <FormInput placeholder={placeholderName} name={"name"} />
-        <FormInput type="email" placeholder={placeholderEmail} name={"email"} />
+    <div className={className}>
+      <CustomForm title={formDict.titleLang} className="">
+        <FormInput placeholder={formDict.placeholderName} name={"name"} />
+        <FormInput
+          type="email"
+          placeholder={formDict.placeholderEmail}
+          name={"email"}
+        />
         <TelMask />
-        <TextArea placeholder={placeholderMessage} name={"message"} />
-        <PinkBtn value={sendLang} className="mt-5" />
+        <TextArea placeholder={formDict.placeholderMessage} name={"message"} />
+        <PinkBtn value={formDict.sendLang} className="mt-5" />
       </CustomForm>
     </div>
   );
