@@ -255,7 +255,7 @@ h1 {
 .gradient-item--on-hover,
 .prev,
 .next,
-.see-all-btn {
+.subscribe {
   border-radius: 10px;
   border: 2px solid transparent;
   margin-bottom: 20px;
@@ -267,7 +267,7 @@ h1 {
 .gradient-item--on-hover::before,
 .prev::before,
 .next::before,
-.see-all-btn::before {
+.subscribe::before {
   content: "";
   position: absolute;
   top: 0;
@@ -296,7 +296,7 @@ h1 {
 
 .prev,
 .next,
-.see-all-btn {
+.subscribe {
   display: flex;
   width: 40px;
   height: 40px;
@@ -312,12 +312,12 @@ h1 {
 }
 .prev::before,
 .next::before,
-.see-all-btn::before {
+.subscribe::before {
   border-radius: 5px;
   background-image: linear-gradient(90deg, #0045b7, #00c6ff);
   margin: -2px;
 }
-.see-all-btn {
+.subscribe {
   width: 100%;
   margin: 0;
   border-radius: 5px;
