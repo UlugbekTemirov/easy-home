@@ -5,7 +5,8 @@ export const news = [
   {
     id: 1,
     slug: "smart-home-systems",
-    image: "https://picsum.photos/200/200",
+    image:
+      "https://demo.smartaddons.com/templates/joomla3/sj-smarthome/cache/resized/a3716c698d6872b4b70ec395267cec33.jpg",
     categories: ["business", "technology"],
     title: {
       en: "Smart home systems are becoming more and more popular",
@@ -29,7 +30,8 @@ export const news = [
   {
     id: 2,
     slug: "new-product-arrived",
-    image: "https://picsum.photos/200/200",
+    image:
+      "https://demo.smartaddons.com/templates/joomla3/sj-smarthome/cache/resized/7af5a2e8577db6da677fae96a13bd850.jpg",
     images: [
       "https://picsum.photos/200/200",
       "https://picsum.photos/200/200",
@@ -59,7 +61,8 @@ export const news = [
   {
     id: 3,
     slug: "our-company-is-growing",
-    image: "https://picsum.photos/200/200",
+    image:
+      "https://demo.smartaddons.com/templates/joomla3/sj-smarthome/cache/resized/1ab8eb456341418b31599998ee2bad82.jpg",
     images: [
       "https://picsum.photos/200/200",
       "https://picsum.photos/200/200",
