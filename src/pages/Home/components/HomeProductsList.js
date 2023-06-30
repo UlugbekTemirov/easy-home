@@ -60,7 +60,10 @@ function HomeProductsList() {
         {renderProducts()}
       </Swiper>
 
-      <div className="flex items-center justify-center md:justify-between flex-wrap">
+      <div
+        data-aos="fade-up"
+        className="flex items-center justify-center md:justify-between flex-wrap"
+      >
         <div className="carousel-navigation flex items-center justify-center gap-5 my-10">
           <div className="line w-[70px] h-1 rounded-lg bg-gradient-to-r from-primary-0 to-secondary-0"></div>
           <div className="carousel-navigation-buttons flex items-center gap-1">

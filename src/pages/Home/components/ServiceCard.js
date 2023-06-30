@@ -4,7 +4,10 @@ import Translate from "../../../utils/Translate";
 
 function ServiceCard({ title, description, icon }) {
   return (
-    <div className="col-span-1 shadow-service-card bg-white hover:bg-gradient-to-r hover:text-white from-primary-0 to-secondary-0 py-[50px] px-[40px] rounded-md">
+    <div
+      data-aos="fade-up"
+      className="col-span-1 shadow-service-card bg-white hover:bg-gradient-to-r hover:text-white from-primary-0 to-secondary-0 py-[50px] px-[40px] rounded-md"
+    >
       <div className="flex flex-col items-center ">
         <div class="image-control relative">
           <Link className="flex justify-center items-center" to="#">

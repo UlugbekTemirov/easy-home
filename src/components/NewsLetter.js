@@ -18,7 +18,7 @@ function NewsLetter() {
   };
 
   return (
-    <div className="newsletter my-24">
+    <div data-aos="fade-up" className="newsletter my-24">
       <Container>
         <div className="mt-[65px]">
           <div className="md:w-[600px] mx-auto">

@@ -6,7 +6,7 @@ import LanglessRedirect from "../../../components/LanglessRedirect";
 
 function HomeProductCard({ name, price, image, slug }) {
   return (
-    <div className="home-product">
+    <div data-aos="fade-up" data-aos-delay="100" className="home-product">
       <GradientBorderElementOnHover>
         <LanglessRedirect to={`/products/${slug}`}>
           <div

@@ -5,7 +5,7 @@ function SectionHeader({ titleDict, subtitleDict, centered = false }) {
   return (
     <>
       {!centered ? (
-        <div className="mb-[50px]">
+        <div data-aos="fade-up" className="mb-[50px]">
           <div className="header-line w-[100px] h-[3px] bg-gradient-to-r from-primary-0 to-secondary-0"></div>
           <h2
             id="title"
@@ -18,7 +18,10 @@ function SectionHeader({ titleDict, subtitleDict, centered = false }) {
           </p>
         </div>
       ) : (
-        <div className="mb-[50px] flex flex-col justify-center items-center">
+        <div
+          data-aos="fade-up"
+          className="mb-[50px] flex flex-col justify-center items-center"
+        >
           <div>
             <div className="header-line w-[100px] h-[3px] bg-gradient-to-r from-primary-0 to-secondary-0"></div>
             <h2

@@ -26,7 +26,7 @@ function Services() {
       <div className="home-services mt-[100px]">
         <SectionHeader titleDict={title} subtitleDict={subtitle} />
         <ServicesList />
-        <div className="my-10">
+        <div data-aos="fade-up" className="my-10">
           <Link
             to={`/${lang}/services`}
             className="bg-gradient-to-r p-12 md:p-20 rounded-md py-3 md:py-3 text-white from-primary-0 to-secondary-0"

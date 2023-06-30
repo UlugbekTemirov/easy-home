@@ -42,7 +42,10 @@ function HomeProductCategories() {
   };
 
   return (
-    <div className="flex items-center justify-center gap-1 flex-wrap">
+    <div
+      data-aos="fade-up"
+      className="flex items-center justify-center gap-1 flex-wrap"
+    >
       <GradientBtn
         className={`category-item ${activeCategory === "all" ? "active" : ""}`}
         onClick={() => handleCategoryChange(allCategory.value)}
