@@ -8,7 +8,13 @@ import homeBlog from "./homeBlog.slice";
 import team from "./team.slice";
 import news from "./news.slice";
 import newsCategories from "./newsCategories.slice";
-import featuredNewsSlice from "./featuredNews.slice";
+import featuredNews from "./featuredNews.slice";
+import products from "./products.slice";
+import featuredProducts from "./featuredProducts.slice";
+import productsCategories from "./productsCategories.slice";
+import singleProduct from "./singleProducts.slice";
+import services from "./services.slice";
+import singleService from "./singleService.slice";
 
 export const store = configureStore({
   reducer: {
@@ -21,7 +27,13 @@ export const store = configureStore({
     team,
     news,
     newsCategories,
-    featuredNewsSlice,
+    featuredNews,
+    products,
+    featuredProducts,
+    productsCategories,
+    singleProduct,
+    services,
+    singleService,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
   devTools: process.env.NODE_ENV !== "production",
