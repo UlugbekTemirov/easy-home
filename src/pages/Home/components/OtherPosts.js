@@ -30,15 +30,25 @@ function OtherPosts() {
           <i class="fa-regular fa-calendar"></i>
           <DateFormatter date="2021-07-05" />
         </p>
-        <button className="mt-10 py-3 px-16 rounded-3xl bg-gradient-to-r from-primary-0 to-secondary-0 text-white">
-          <Translate
-            dictionary={{
-              uz: "Batafsil o'qish",
-              ru: "Подробнее",
-              en: "Read more",
-            }}
-          />
-        </button>
+        <div className="flex justify-between items-center mt-10 mb-5 md:mb-0">
+          <button className=" py-3 px-16 rounded-3xl bg-gradient-to-r from-primary-0 to-secondary-0 text-white">
+            <Translate
+              dictionary={{
+                uz: "Batafsil o'qish",
+                ru: "Подробнее",
+                en: "Read more",
+              }}
+            />
+          </button>
+          <div className="navigation flex md:hidden gap-1">
+            <div className="prev">
+              <i className="fas fa-chevron-left"></i>
+            </div>
+            <div className="next">
+              <i className="fas fa-chevron-right"></i>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

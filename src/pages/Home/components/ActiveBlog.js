@@ -14,7 +14,7 @@ function ActiveBlog() {
             backgroundRepeat: "no-repeat",
           }}
         ></div>
-        <div className="navigation flex gap-1">
+        <div className="hidden navigation md:flex gap-1">
           <div className="prev">
             <i className="fas fa-chevron-left"></i>
           </div>

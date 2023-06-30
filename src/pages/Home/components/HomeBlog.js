@@ -53,12 +53,18 @@ function HomeBlog() {
             <div>
               <Swiper
                 spaceBetween={20}
-                slidesPerView={2}
+                slidesPerView={1}
                 className="mySwiper"
                 slideClass="swiper-slide"
                 autoplay={{
                   delay: 1500,
                   disableOnInteraction: false,
+                }}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
                 }}
               >
                 {renderOtherPosts()}
