@@ -89,4 +89,35 @@ export const news = [
       <image src="https://picsum.photos/200/200" alt="something" />
     `,
   },
+  {
+    id: 4,
+    slug: "our-company-is-growing",
+    image:
+      "https://demo.smartaddons.com/templates/joomla3/sj-smarthome/cache/resized/1ab8eb456341418b31599998ee2bad82.jpg",
+    images: [
+      "https://picsum.photos/200/200",
+      "https://picsum.photos/200/200",
+      "https://picsum.photos/200/200",
+      "https://picsum.photos/200/200",
+      "https://picsum.photos/200/200",
+    ],
+    categories: ["articles"],
+    title: {
+      en: "Our company is growing day by day",
+      ru: "Наша компания растет с каждым днем",
+      uz: "Bizning kompaniya har kuni o'sayapti",
+    },
+    date: "2023-01-05",
+    description: {
+      en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      ru: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      uz: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
+    content: `
+      <p>${DYMMY_DATA}</p>
+      <image src="https://picsum.photos/200/200" alt="something" />
+      <p>${DYMMY_DATA}</p>
+      <image src="https://picsum.photos/200/200" alt="something" />
+    `,
+  },
 ];

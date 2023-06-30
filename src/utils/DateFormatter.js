@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 const DateFormatter = ({ date }) => {
   const { lang } = useSelector((state) => state.navbar);
 
+  if (!date) return null;
+
   const dateObj = new Date(date);
   const month = dateObj.toLocaleString(lang, { month: "long" });
   const day = dateObj.toLocaleString(lang, { day: "numeric" });

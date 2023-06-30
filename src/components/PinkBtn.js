@@ -9,7 +9,7 @@ function PinkBtn({ className, type = "submit", value }) {
   return (
     <input
       type={type}
-      className={`py-3 px-5 align-middle text-white font-bold leading-0 bg-btnPink rounded-md cursor-pointer ${className}`}
+      className={`py-3 px-5 align-middle text-white font-bold leading-0 bg-gradient-to-r from-primary-0 to-secondary-0 rounded-md cursor-pointer ${className}`}
       value={value[lang.toLowerCase()]}
     />
   );

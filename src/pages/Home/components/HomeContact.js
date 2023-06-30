@@ -28,7 +28,7 @@ function HomeContact() {
           <div data-aos="fade-left" data-aos-delay="300">
             <CustomForm
               title={formDict.titleLang}
-              className="w-[500px] rounded-md"
+              className="w-full md:w-[500px] rounded-md"
             >
               <FormInput placeholder={formDict.placeholderName} name={"name"} />
               <FormInput

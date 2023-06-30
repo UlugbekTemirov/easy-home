@@ -324,6 +324,11 @@ h1 {
   padding: 20px 0;
 }
 
+#blog-image {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
 /* write a style in phone the background shouldn't visibe */
 @media (max-width: 767px) {
   .home-services {

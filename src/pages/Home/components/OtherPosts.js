@@ -1,8 +1,17 @@
 import React from "react";
 import Translate from "../../../utils/Translate";
 import DateFormatter from "../../../utils/DateFormatter";
+import { useSelector } from "react-redux";
+import { createSelector } from "reselect";
 
 function OtherPosts() {
+  const selectedBlog = createSelector(
+    (state) => state.homeBlog.blogs,
+    (state) => state.homeBlog.activeblogId,
+    (blogs, activeblogId) => blogs.find((blog) => blog.id === activeblogId)
+  );
+
+  const activeBlog = useSelector(selectedBlog);
   const titleDict = {
     uz: "Ajoyib chegirmlalar mavsumi",
     ru: "Лучшие летние акции",
@@ -19,16 +28,16 @@ function OtherPosts() {
     <div className="other-posts">
       <div className="active-blog-content text-[#666]">
         <h2 className="text-[24px] font-semibold text-[#000] hover:text-[#00c6ff] cursor-pointer">
-          <Translate dictionary={titleDict} />
+          <Translate dictionary={activeBlog?.title} />
         </h2>
 
         <p className="max-w-[500px] mt-1">
-          <Translate dictionary={descriptionDict} />
+          <Translate dictionary={activeBlog?.description} />
         </p>
 
         <p className="flex gap-2 items-center mt-3">
           <i class="fa-regular fa-calendar"></i>
-          <DateFormatter date="2021-07-05" />
+          <DateFormatter date={activeBlog?.date} />
         </p>
         <div className="flex justify-between items-center mt-10 mb-5 md:mb-0">
           <button className=" py-3 px-16 rounded-3xl bg-gradient-to-r from-primary-0 to-secondary-0 text-white">
@@ -41,10 +50,10 @@ function OtherPosts() {
             />
           </button>
           <div className="navigation flex md:hidden gap-1">
-            <div className="prev">
+            <div className="prev  hover:bg-gradient-to-r from-primary-0 to-secondary-0">
               <i className="fas fa-chevron-left"></i>
             </div>
-            <div className="next">
+            <div className="next hover:bg-gradient-to-r from-primary-0 to-secondary-0">
               <i className="fas fa-chevron-right"></i>
             </div>
           </div>
