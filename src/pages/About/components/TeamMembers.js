@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchTeamMembers } from "../../../redux/team.slice";
 
 import team from "../../../db/team.db";
 import { headers } from "../../../db/team.db";
 import Translate from "../../../utils/Translate";
 import SocialLine from "./SocialLine";
-console.log(headers);
 
 const TeamMembers = () => {
+  const dispatch = useDispatch();
+  const { teamMembers } = useSelector((state) => state.team);
+
+  useEffect(() => {
+    teamMembers.length === 0 && dispatch(fetchTeamMembers());
+
+    //eslint-disable-next-line
+  }, []);
+
   const team_colors = [
     "#E02424",
     "#E3A008",
@@ -51,7 +61,7 @@ const TeamMembers = () => {
           },
         }}
       >
-        {team.map(({ full_name, position, image, socials }, index) => (
+        {team?.map(({ full_name, position, image, socials }, index) => (
           <SwiperSlide
             style={{
               borderColor: team_colors[index],

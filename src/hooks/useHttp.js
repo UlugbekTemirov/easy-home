@@ -1,12 +1,18 @@
 import axios from "axios";
-import { baseURL } from "../config/config";
-
+import { BASE_URL } from "../config";
 export const useHttp = () => {
   const axiosInstance = axios.create({
-    baseURL,
+    baseURL: BASE_URL,
   });
 
-  const request = async ({ method = "GET", url, data, headers }) => {
+  const request = async ({
+    method = "GET",
+    url,
+    data,
+    headers = {
+      "Content-Type": "application/json",
+    },
+  }) => {
     try {
       const response = await axiosInstance({
         method,
