@@ -6,6 +6,8 @@ const initialState = {
   loading: false,
   error: null,
   searchValue: null,
+  loadMoreLoading: false,
+  loadMoreError: null,
 };
 
 //
@@ -34,6 +36,16 @@ export const fetchNewsByCategoryId = createAsyncThunk(
       },
     });
     return response;
+  }
+);
+
+export const loadMoreNews = createAsyncThunk(
+  "news/loadMoreNews",
+  async (url) => {
+    const { request } = useHttp();
+    return await request({
+      url,
+    });
   }
 );
 
@@ -68,6 +80,20 @@ const newsSlice = createSlice({
       .addCase(fetchNewsByCategoryId.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error;
+      })
+      .addCase(loadMoreNews.pending, (state) => {
+        state.loadMoreLoading = true;
+      })
+      .addCase(loadMoreNews.fulfilled, (state, action) => {
+        state.loadMoreLoading = false;
+        state.news = {
+          ...action.payload,
+          results: [...state.news.results, ...action.payload.results],
+        };
+      })
+      .addCase(loadMoreNews.rejected, (state, action) => {
+        state.loadMoreLoading = false;
+        state.loadMoreError = action.error;
       });
   },
 });
