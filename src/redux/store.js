@@ -8,6 +8,7 @@ import homeBlog from "./homeBlog.slice";
 import team from "./team.slice";
 import news from "./news.slice";
 import newsCategories from "./newsCategories.slice";
+import singleNews from "./singleNews.slice";
 import featuredNews from "./featuredNews.slice";
 import products from "./products.slice";
 import featuredProducts from "./featuredProducts.slice";
@@ -34,6 +35,7 @@ export const store = configureStore({
     singleProduct,
     services,
     singleService,
+    singleNews,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
   devTools: process.env.NODE_ENV !== "production",

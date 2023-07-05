@@ -2,8 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { useHttp } from "../hooks/useHttp";
 
 const initialState = {
-  singleNews: [],
-  loading: false,
+  singleNews: {},
+  loading: true,
   error: null,
 };
 
