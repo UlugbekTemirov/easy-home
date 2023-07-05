@@ -9,13 +9,23 @@ export const assignColorHandler = (cats, colors) => {
 };
 
 export const categoryTitleHandler = (cats, category) => {
+  if (!cats) return;
   const title = cats.find((cat) => cat.value === category).name;
   return <Translate dictionary={title} />;
 };
 
 export const categorySearchHandler = (category, location, navigate) => {
   const params = new URLSearchParams(location.search);
-  params.set("category", category);
+  params.set("category", category.value);
+  params.set("id", category.id);
+  navigate(`?${params.toString()}`);
+};
+
+export const newsSearchHandler = (search, location, navigate) => {
+  const params = new URLSearchParams(location.search);
+  params.delete("category");
+  params.delete("id");
+  params.set("search", search);
   navigate(`?${params.toString()}`);
 };
 

@@ -12,7 +12,7 @@ export const fetchFeaturedNews = createAsyncThunk(
   async () => {
     const { request } = useHttp();
     const response = await request({
-      url: "api/v1/news/news/featured_posts/",
+      url: "api/v1/news/news/featured_posts/?page_size=5",
       method: "GET",
       headers: {
         "Content-Type": "application/json",

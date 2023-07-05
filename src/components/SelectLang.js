@@ -29,7 +29,6 @@ const SelectLang = () => {
     const { search } = location;
     navigate(`/${lang}/${path}${search}`, { replace: true });
 
-    console.log(lang);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lang]);
 

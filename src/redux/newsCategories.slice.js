@@ -5,6 +5,7 @@ const initialState = {
   categories: [],
   loading: false,
   error: null,
+  activeCategoryId: "all",
 };
 
 export const fetchCategories = createAsyncThunk(
@@ -25,7 +26,11 @@ export const fetchCategories = createAsyncThunk(
 const categoriesSlice = createSlice({
   name: "categories",
   initialState,
-  reducers: {},
+  reducers: {
+    setActiveCategoryId: (state, action) => {
+      state.activeCategoryId = action.payload;
+    },
+  },
   extraReducers: {
     [fetchCategories.pending]: (state) => {
       state.loading = true;
@@ -33,6 +38,15 @@ const categoriesSlice = createSlice({
     [fetchCategories.fulfilled]: (state, action) => {
       state.loading = false;
       state.categories = action.payload;
+      state.categories.results.unshift({
+        id: "all",
+        name: {
+          en: "All",
+          ru: "Все",
+          uz: "Hammasi",
+        },
+        value: "all",
+      });
     },
     [fetchCategories.rejected]: (state, action) => {
       state.loading = false;
@@ -41,4 +55,5 @@ const categoriesSlice = createSlice({
   },
 });
 
+export const { setActiveCategoryId } = categoriesSlice.actions;
 export default categoriesSlice.reducer;

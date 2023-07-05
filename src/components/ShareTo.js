@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import Translate from "../utils/Translate";
 import { FiCopy } from "react-icons/fi";
 import { IoCloudDoneSharp } from "react-icons/io5";

@@ -1,9 +1,8 @@
 import React from "react";
-import { news_cats } from "../../../db/categories.db";
+import { useSelector } from "react-redux";
 
 // helpers
 import {
-  assignColorHandler,
   categoryTitleHandler,
   category_colors,
   categorySearchHandler,
@@ -11,8 +10,13 @@ import {
 
 import { useLocation, useNavigate } from "react-router-dom";
 
-const CategoryButton = ({ category }) => {
+const CategoryButton = ({ category, index }) => {
   const [location, navigate] = [useLocation(), useNavigate()];
+  const { categories } = useSelector((state) => state.newsCategories);
+
+  if (categories.results && categories?.results.length <= 0) {
+    return <h1>Not found...</h1>;
+  }
 
   return (
     <button
@@ -21,11 +25,11 @@ const CategoryButton = ({ category }) => {
         categorySearchHandler(category, location, navigate);
       }}
       className={`${
-        assignColorHandler(news_cats, category_colors)[category]
+        category_colors[index % category_colors.length]
       } text-white pb-1 pt-2 rounded-tl-2xl rounded-br-2xl -skew-x-12 text-lg shadow-lg px-3 font-semibold`}
       type="button"
     >
-      {categoryTitleHandler(news_cats, category)}
+      {categoryTitleHandler(categories.results, category?.value)}
     </button>
   );
 };

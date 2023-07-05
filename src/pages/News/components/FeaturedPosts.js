@@ -1,46 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MiniHeader from "../../../components/MiniHeader";
 import Translate from "../../../utils/Translate";
 import DateFormatter from "../../../utils/DateFormatter";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { fetchFeaturedNews } from "../../../redux/featuredNews.slice";
+import FeaturedPostsSkeletList from "../../../components/FeaturedPostsSkeletList";
 
-const recent_posts = [
-  {
-    id: 1,
-    title: {
-      en: "Lorem ipsum dolor sit amet consectetur.",
-      ru: "Lorem ipsum dolor sit amet consectetur.",
-      uz: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    image: "https://picsum.photos/200/200",
-    slug: "lorem-ipsum-1",
-    date: "2021-05-05",
-  },
-  {
-    id: 2,
-    title: {
-      en: "Lorem ipsum dolor sit amet consectetur",
-      ru: "Lorem ipsum dolor sit amet consectetur",
-      uz: "Lorem ipsum dolor sit amet consectetur",
-    },
-    image: "https://picsum.photos/200/200",
-    slug: "lorem-ipsum-2",
-    date: "2021-05-05",
-  },
-  {
-    id: 3,
-    title: {
-      en: "Lorem ipsum dolor sit amet consectetur",
-      ru: "Lorem ipsum dolor sit amet consectetur",
-      uz: "Lorem ipsum dolor sit amet consectetur",
-    },
-    image: "https://picsum.photos/200/200",
-    slug: "lorem-ipsum-3",
-    date: "2021-05-05",
-  },
-];
-
-const Post = ({ title, image, date, slug }) => {
+const Post = ({ title, image, updated_at, slug }) => {
   return (
     <Link
       to={slug}
@@ -57,7 +24,7 @@ const Post = ({ title, image, date, slug }) => {
             <Translate dictionary={title} />
           </p>
           <p className="text-gray-600 font-semibold">
-            <DateFormatter date={date} />
+            <DateFormatter date={updated_at} />
           </p>
         </div>
       </div>
@@ -65,7 +32,26 @@ const Post = ({ title, image, date, slug }) => {
   );
 };
 
-const FeaturedPosts = ({ posts = recent_posts }) => {
+const FeaturedPosts = () => {
+  const dispatch = useDispatch();
+  const { featuredNews, loading, error } = useSelector(
+    (state) => state.featuredNews
+  );
+
+  useEffect(() => {
+    dispatch(fetchFeaturedNews());
+
+    // eslint-disable-next-line
+  }, []);
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  if (featuredNews.results && featuredNews?.results.length <= 0) {
+    return <h1>Nothing found</h1>;
+  }
+
   return (
     <div className="mt-5">
       <MiniHeader
@@ -76,9 +62,13 @@ const FeaturedPosts = ({ posts = recent_posts }) => {
         }}
       />
       <div className="flex flex-col items-center justify-center">
-        {posts.map((post, index) => {
-          return <Post key={index} {...post} />;
-        })}
+        {loading ? (
+          <FeaturedPostsSkeletList items={1} />
+        ) : (
+          featuredNews?.results?.map((post, index) => {
+            return <Post key={index} {...post} />;
+          })
+        )}
       </div>
     </div>
   );

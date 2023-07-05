@@ -12,11 +12,10 @@ import DateFormatter from "../../../utils/DateFormatter";
 const NewsCard = ({
   image,
   id,
-  categories,
+  category,
   slug,
   title,
-  content,
-  date,
+  updated_at,
   description,
 }) => {
   const [modal, setModal] = useState(false);
@@ -39,8 +38,8 @@ const NewsCard = ({
         <div className="p-5 h-[calc(100%-300px)]">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              {categories.map((category, index) => (
-                <CategoryButton key={index} category={category} />
+              {category?.map((category, idx) => (
+                <CategoryButton index={idx} key={idx} category={category} />
               ))}
             </div>
             <ShareButton
@@ -67,7 +66,7 @@ const NewsCard = ({
                 Read more
               </button>
               <p className="text-gray-500 flex items-center">
-                <DateFormatter date={date} />
+                <DateFormatter date={updated_at} />
               </p>
             </div>
           </div>

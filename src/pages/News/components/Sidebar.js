@@ -6,8 +6,6 @@ import Categories from "../../../components/Categories";
 import Search from "../../../components/Search";
 
 // db
-import { news_cats } from "../../../db/categories.db";
-import { categoryAllHandler } from "../../../utils/helpers";
 
 const Sidebar = () => {
   return (
@@ -17,7 +15,7 @@ const Sidebar = () => {
         <FeaturedPosts />
       </div>
       <div className="xl:mt-10">
-        <Categories categories={categoryAllHandler(news_cats, 45)} />
+        <Categories />
       </div>
     </div>
   );

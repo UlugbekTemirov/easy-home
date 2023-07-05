@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { BASE_URL } from "../config";
 import { useHttp } from "../hooks/useHttp";
 
 const initialState = {
@@ -13,7 +12,7 @@ export const fetchTeamMembers = createAsyncThunk(
   async () => {
     const { request } = useHttp();
     const response = await request({
-      url: "/about/team",
+      url: "/api/v1/about/team/",
       method: "GET",
       headers: {
         "Content-Type": "application/json",
