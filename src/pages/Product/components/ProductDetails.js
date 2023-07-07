@@ -10,12 +10,11 @@ const ProductDetails = ({ product }) => {
   const d = useDispatch();
   const { tab } = useSelector((state) => state.product);
 
-  const { title, price, description, images, documents, details, slug } =
-    product;
+  const { title, price_uzs, description, documents, parameters } = product;
 
   const tanHandler = (tab) => {
     const components = {
-      params: <Details details={details} />,
+      params: <Details details={parameters} />,
       docs: <Documents documents={documents} />,
     };
 
@@ -53,9 +52,11 @@ const ProductDetails = ({ product }) => {
       </h1>
       <div className="flex items-center gap-5 mt-5">
         <p className="text-3xl text-main font-semibold">
-          {price[0].amount} so'm
+          {price_uzs[0].amount} so'm
         </p>
-        <p className="text-2xl text-gray-400">(${price[1].amount})</p>
+        <p className="text-2xl text-gray-400">
+          {price_uzs[1]?.amount ? "$" + price_uzs[1].amount : ""}
+        </p>
       </div>
       <div>
         <p className="text-gray-500 mt-5 text-xl">

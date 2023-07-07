@@ -5,6 +5,7 @@ import {
   fetchNews,
   fetchNewsByCategoryId,
   loadMoreNews,
+  setSearchValue,
 } from "../../../redux/news.slice";
 import { useSearchParams } from "react-router-dom";
 import LoaderSkeletonList from "../../../components/LoaderSkeletonList";
@@ -22,6 +23,9 @@ const NewsList = () => {
   const search = searchParams.get("search");
 
   useEffect(() => {
+    if (!search) {
+      dispatch(setSearchValue(""));
+    }
     if (!id) return;
     dispatch(setActiveCategoryId(id));
     // eslint-disable-next-line

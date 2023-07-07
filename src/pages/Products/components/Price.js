@@ -15,7 +15,9 @@ const Price = ({ price, sumClassname = "", usdClassname = "" }) => {
       </p>
       <p className={`text-center text-secondary/[0.4] text-xl`}>
         <span className={usdClassname}>
-          (${findTargetCurrency(price, "usd").amount})
+          {findTargetCurrency(price, "usd"?.amount)
+            ? `${findTargetCurrency(price, "usd")?.amount}`
+            : ""}
         </span>
       </p>
     </div>

@@ -5,6 +5,8 @@ const initialState = {
   productsCategories: [],
   loading: false,
   error: null,
+  activeCategory: "all",
+  seacrhValue: "",
 };
 
 export const fetchProductsCategories = createAsyncThunk(
@@ -26,7 +28,14 @@ export const fetchProductsCategories = createAsyncThunk(
 const productsCategoriesSlice = createSlice({
   name: "productsCategories",
   initialState,
-  reducers: {},
+  reducers: {
+    setActiveCategory: (state, action) => {
+      state.activeCategory = action.payload;
+    },
+    setSearchValue: (state, action) => {
+      state.seacrhValue = action.payload;
+    },
+  },
   extraReducers: {
     [fetchProductsCategories.pending]: (state) => {
       state.loading = true;
@@ -34,6 +43,15 @@ const productsCategoriesSlice = createSlice({
     [fetchProductsCategories.fulfilled]: (state, action) => {
       state.loading = false;
       state.productsCategories = action.payload;
+      state.productsCategories.results.unshift({
+        id: "all",
+        name: {
+          en: "All",
+          ru: "Все",
+          uz: "Hammasi",
+        },
+        slug: "all",
+      });
     },
     [fetchProductsCategories.rejected]: (state, action) => {
       state.loading = false;
@@ -43,3 +61,5 @@ const productsCategoriesSlice = createSlice({
 });
 
 export default productsCategoriesSlice.reducer;
+export const { setActiveCategory, setSearchValue } =
+  productsCategoriesSlice.actions;

@@ -1,20 +1,23 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 // components
-import Categories from "../../../components/Categories";
 import PriceFilter from "./PriceFilter";
-
-// db
-import { product_cats } from "../../../db/categories.db";
 import Search from "../../../components/Search";
-import { categoryAllHandler } from "../../../utils/helpers";
+import ProductCategories from "./ProductCategories";
+import { setSearchValue } from "../../../redux/productsCategories.slice";
 
 const Sidebar = () => {
+  const { seacrhValue } = useSelector((state) => state.productsCategories);
   return (
     <div className="w-full">
-      <Search />
+      <Search
+        setSearchValue={setSearchValue}
+        page="products"
+        value={seacrhValue}
+      />
       <div className="grid xl:grid-cols-1 md:grid-cols-2 xl:gap-0 gap-5 xl:pt-5">
-        <Categories categories={categoryAllHandler(product_cats, 60)} />
+        <ProductCategories />
         <PriceFilter />
       </div>
     </div>

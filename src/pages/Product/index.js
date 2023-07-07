@@ -15,20 +15,41 @@ import ShareTo from "../../components/ShareTo";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "../../redux/product.slice";
+import { fetchSingleProduct } from "../../redux/singleProducts.slice";
+import SingleProductLoader from "./components/SingleProductLoader";
 
 const Index = () => {
   const { slug } = useParams();
   const d = useDispatch();
   const { modal, productUrl } = useSelector((state) => state.product);
-
-  const findProduct = (slug) => {
-    return products.find((product) => product.slug === slug);
-  };
-  const product = findProduct(slug);
+  const { singleProduct, loading, error } = useSelector(
+    (state) => state.singleProduct
+  );
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    d(fetchSingleProduct(slug));
+
+    // eslint-disable-next-line
   }, []);
+
+  if (error) return <h1>Error...</h1>;
+  if (!singleProduct.id) return <h1>Not found...</h1>;
+
+  const loadingProduct = {
+    title: {
+      en: "Loading...",
+      ru: "Загрузка...",
+      uz: "Yuklanmoqda...",
+    },
+  };
+  const errorProduct = {
+    title: {
+      en: "Error...",
+      ru: "Ошибка...",
+      uz: "Xatolik...",
+    },
+  };
 
   return (
     <div className="">
@@ -39,15 +60,21 @@ const Index = () => {
       >
         <ShareTo link={productUrl} />
       </MyModal>
-      <ProductBackground product={product} />
+      <ProductBackground
+        product={
+          loading ? loadingProduct : error ? errorProduct : singleProduct
+        }
+      />
       <Container>
-        {product ? (
+        {loading ? (
+          <SingleProductLoader />
+        ) : singleProduct.id ? (
           <div className="grid md:grid-cols-2 grid-cols-1 xl:gap-[100px] md:gap-[30px] gap-10 md:py-16 py-10">
             <div className="col-span-1">
-              <ProductGallery images={product.images} />
+              <ProductGallery images={singleProduct.slider_images} />
             </div>
             <div className="col-span-1">
-              <ProductDetails product={product} />
+              <ProductDetails product={singleProduct} />
             </div>
           </div>
         ) : (

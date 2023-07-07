@@ -2,7 +2,6 @@ import React from "react";
 import BgCover from "../../components/BgCover";
 import Sidebar from "./components/Sidebar";
 import NewsList from "./components/NewsList";
-
 const Index = () => {
   return (
     <div>

@@ -9,7 +9,7 @@ import Translate from "../../../utils/Translate";
 // components
 import Price from "./Price";
 
-const Product = ({ image, title, price, slug, index }) => {
+const Product = ({ image, title, price_uzs, slug, index }) => {
   return (
     <Link
       to={slug}
@@ -23,7 +23,7 @@ const Product = ({ image, title, price, slug, index }) => {
         <h3 className="text-center text-xl capitalize font-bold mb-2 text-secondary">
           <Translate dictionary={title} />
         </h3>
-        <Price price={price} />
+        <Price price={price_uzs} />
       </div>
     </Link>
   );

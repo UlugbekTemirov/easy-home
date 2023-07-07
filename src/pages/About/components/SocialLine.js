@@ -28,9 +28,9 @@ const SocialLine = ({ socials, index, colors }) => {
       {!socialLine && (
         <div data-aos="fade-left" className={`absolute bottom-[50px] right-0`}>
           <div className="flex flex-col">
-            {socials.map(({ name, link }, ind) => (
+            {socials.map(({ name, url }, ind) => (
               <a
-                href={link}
+                href={url}
                 target="_blank"
                 rel="noreferrer"
                 className="text-white text-2xl mb-3"

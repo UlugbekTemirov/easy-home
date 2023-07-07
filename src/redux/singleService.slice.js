@@ -3,7 +3,7 @@ import { useHttp } from "../hooks/useHttp";
 
 const initialState = {
   singleService: {},
-  loading: false,
+  loading: true,
   error: null,
 };
 

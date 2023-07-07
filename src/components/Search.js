@@ -3,17 +3,15 @@ import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { newsSearchHandler } from "../utils/helpers";
 import { useSelector, useDispatch } from "react-redux";
-import { setSearchValue } from "../redux/news.slice";
 
-const Search = () => {
+const Search = ({ setSearchValue, page, value = "" }) => {
   const [location, navigate] = [useLocation(), useNavigate()];
   const { lang } = useSelector((state) => state.navbar);
-  const { searchValue } = useSelector((state) => state.news);
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const search = searchParams.get("search");
 
-  const handleSeach = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const search = formData.get("search");
@@ -35,7 +33,7 @@ const Search = () => {
       <div className="xl:w-full md:w-fit w-full bg-search md:p-8 p-4">
         <form
           onSubmit={(e) => {
-            handleSeach(e);
+            handleSearch(e);
           }}
           className="flex w-full rounded-md overflow-hidden"
         >
@@ -44,12 +42,12 @@ const Search = () => {
             name="search"
             className="outline-none p-[10px_20px] md:text-lg w-full font-semibold"
             type="text"
-            value={searchValue}
+            value={value}
             placeholder="Search..."
             onChange={(e) => {
               dispatch(setSearchValue(e.target.value));
               if (e.target.value === "") {
-                navigate(`/${lang}/news`);
+                navigate(`/${lang}/${page}`);
               }
             }}
           />

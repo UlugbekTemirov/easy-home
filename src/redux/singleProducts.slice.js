@@ -3,7 +3,7 @@ import { useHttp } from "../hooks/useHttp";
 
 const initialState = {
   singleProduct: [],
-  loading: false,
+  loading: true,
   error: null,
 };
 

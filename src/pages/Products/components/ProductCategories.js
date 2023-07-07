@@ -1,38 +1,43 @@
 import React, { useEffect } from "react";
-import Translate from "../utils/Translate";
-import MiniHeader from "./MiniHeader";
-import { useNavigate } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
-import classNames from "classnames";
-import {
-  fetchCategories,
-  setActiveCategoryId,
-} from "../redux/newsCategories.slice";
-import CategoryLoadingSkeletList from "./CategoryLoadingSkeletList";
-import { setSearchValue } from "../redux/news.slice";
+import { useNavigate } from "react-router-dom";
 
-const Categories = () => {
-  const navigate = useNavigate();
+//components
+import MiniHeader from "../../../components/MiniHeader";
+import CategoryLoadingSkeletList from "../../../components/CategoryLoadingSkeletList";
+import Translate from "../../../utils/Translate";
+import NothingFound from "../../../components/NothingFound";
+
+//import functions
+import {
+  fetchProductsCategories,
+  setActiveCategory,
+  setSearchValue,
+} from "../../../redux/productsCategories.slice";
+import classNames from "classnames";
+
+function ProductCategories() {
   const dispatch = useDispatch();
-  const { categories, loading, error, activeCategoryId } = useSelector(
-    (state) => state.newsCategories
+  const navigate = useNavigate();
+  const { productsCategories, loading, error, activeCategory } = useSelector(
+    (state) => state.productsCategories
   );
   const { lang } = useSelector((state) => state.navbar);
 
   useEffect(() => {
-    dispatch(fetchCategories());
+    dispatch(fetchProductsCategories());
     // eslint-disable-next-line
   }, []);
 
-  const categoryHandler = (value, categoryId) => {
-    if (value === "all") return navigate(`/${lang}/news`);
-    else navigate(`?category=${value}&id=${categoryId}`);
+  const categoryHandler = (slug) => {
+    if (slug === "all") return navigate(`/${lang}/products`);
+    else navigate(`?category=${slug}`);
   };
 
-  if (error) return <h1>Error...</h1>;
+  if (error) return <h1>Error</h1>;
 
-  if (categories.results && categories?.results.length === 0) {
-    return <h1>Not found...</h1>;
+  if (productsCategories.results && productsCategories.results.length === 0) {
+    return <NothingFound />;
   }
 
   return (
@@ -48,19 +53,20 @@ const Categories = () => {
         {loading ? (
           <CategoryLoadingSkeletList />
         ) : (
-          categories?.results?.map((item) => {
+          productsCategories?.results?.map((item) => {
             const btnClassname = classNames(
               "flex justify-between items-center cursor-pointer p-3 hover:bg-main hover:text-white rounded-lg w-full",
               {
-                "bg-main text-white": activeCategoryId === item.id,
+                "bg-main text-white": activeCategory === item.slug,
               }
             );
+
             return (
               <div key={item.id} className="border-b-2">
                 <button
                   onClick={() => {
-                    categoryHandler(item.value, item.id);
-                    dispatch(setActiveCategoryId(item.id));
+                    categoryHandler(item.slug);
+                    dispatch(setActiveCategory(item.slug));
                     dispatch(setSearchValue(""));
                   }}
                   className={btnClassname}
@@ -70,7 +76,7 @@ const Categories = () => {
                     <Translate dictionary={item.name} />
                   </h1>
                   <h1 className="bg-blue-100 w-8 h-8 rounded-md flex items-center justify-center font-bold text-secondary/[0.7]">
-                    {item.posts_count}
+                    {item.products_count}
                   </h1>
                 </button>
               </div>
@@ -80,6 +86,6 @@ const Categories = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Categories;
+export default ProductCategories;

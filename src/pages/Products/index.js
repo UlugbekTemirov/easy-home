@@ -2,6 +2,8 @@ import React from "react";
 
 // layout
 import Container from "../../layout/Container";
+
+// components
 import BgCover from "../../components/BgCover";
 import Topbar from "./components/Topbar";
 import ProductsList from "./components/ProductsList";

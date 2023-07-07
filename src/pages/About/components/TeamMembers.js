@@ -27,6 +27,8 @@ const TeamMembers = () => {
     "#6B7280",
   ];
 
+  if (teamMembers.length === 0) return null;
+
   return (
     <div data-aos="fade-up">
       <div className="team-header mb-10">
@@ -61,7 +63,7 @@ const TeamMembers = () => {
           },
         }}
       >
-        {team?.map(({ full_name, position, image, socials }, index) => (
+        {teamMembers?.map(({ full_name, position, image, socials }, index) => (
           <SwiperSlide
             style={{
               borderColor: team_colors[index],
