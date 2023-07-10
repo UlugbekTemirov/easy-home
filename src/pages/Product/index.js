@@ -33,9 +33,6 @@ const Index = () => {
     // eslint-disable-next-line
   }, []);
 
-  if (error) return <h1>Error...</h1>;
-  if (!singleProduct.id) return <h1>Not found...</h1>;
-
   const loadingProduct = {
     title: {
       en: "Loading...",
@@ -50,6 +47,9 @@ const Index = () => {
       uz: "Xatolik...",
     },
   };
+
+  if (error) return <h1>Error...</h1>;
+  if (!singleProduct.id && !loading) return <h1>Not found...</h1>;
 
   return (
     <div className="">

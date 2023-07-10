@@ -3,7 +3,7 @@ import { useHttp } from "../hooks/useHttp";
 
 const initialState = {
   news: [],
-  loading: false,
+  loading: true,
   error: null,
   searchValue: null,
   loadMoreLoading: false,
