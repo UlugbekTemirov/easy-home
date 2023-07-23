@@ -8,14 +8,30 @@ import TelMask from "../../../components/TelMask";
 import formDict from "../../../db/contactform.db";
 import contactPhone from "../../../assets/images/contact-phone.png";
 import Container from "../../../layout/Container";
+import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
+import { BASE_URL } from "../../../config";
+
+const messageDict = {
+  uz: "Xabar muvaffaqiyatli yuborildi!",
+  ru: "Сообщение успешно отправлено!",
+  en: "Message sent successfully!",
+};
 
 function HomeContact() {
+  const { lang } = useSelector((state) => state.navbar);
+  const { pageImage } = useSelector((state) => state.pageImage);
+
   return (
     <div
       data-aos="fade-up"
       className="home-contact-form py-20 mt-16 md:mt-[200px]"
       style={{
-        backgroundImage: `url(${bgContact})`,
+        backgroundImage: `url(${
+          pageImage?.home_contact
+            ? BASE_URL + pageImage.home_contact
+            : bgContact
+        })`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
@@ -27,6 +43,12 @@ function HomeContact() {
           </div>
           <div data-aos="fade-left" data-aos-delay="300">
             <CustomForm
+              onSubmit={(e) => {
+                e.preventDefault();
+                toast.success(
+                  messageDict[lang.toLowerCase()] || messageDict["en"]
+                );
+              }}
               title={formDict.titleLang}
               className="w-full md:w-[500px] rounded-md"
             >

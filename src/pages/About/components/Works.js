@@ -4,8 +4,12 @@ import ProggressList from "./ProggressList";
 
 //import media files
 import smart4 from "../../../assets/images/smart6.jpg";
+import { useSelector } from "react-redux";
+import { BASE_URL } from "../../../config";
 
 function Works() {
+  const { pageImage } = useSelector((state) => state.pageImage);
+
   const titleLang = {
     en: "Discover a New Level of Convenience and Control",
     ru: "Откройте для себя новый уровень удобства и контроля",
@@ -36,7 +40,11 @@ function Works() {
         <ProggressList />
       </div>
       <div
-        style={{ background: `url(${smart4}) no-repeat center center/cover` }}
+        style={{
+          background: `url(${
+            pageImage?.about_stats ? BASE_URL + pageImage?.about_stats : smart4
+          }) no-repeat center center/cover`,
+        }}
         className="image col-span-1 md:col-span-3 min-h-[400px]"
       ></div>
     </div>

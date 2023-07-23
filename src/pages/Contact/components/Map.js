@@ -4,9 +4,14 @@ import locationIcon from "../../../assets/icons/placeholder.png";
 import L from "leaflet";
 //import map styles
 import "leaflet/dist/leaflet.css";
+import { useSelector } from "react-redux";
 
 function Map() {
-  const position = [51.505, -0.09];
+  const { contactDetails } = useSelector((state) => state.contactDetails);
+  const position = [
+    contactDetails?.address_long || 51.505,
+    contactDetails?.address_long || -0.09,
+  ];
   const customIcon = L.icon({
     iconUrl: locationIcon,
     iconSize: [50, 50],
@@ -26,7 +31,7 @@ function Map() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={position} icon={customIcon}>
-        <Popup>Amir Temur shox ko'chasi 108-uy</Popup>
+        <Popup>{contactDetails?.address || "Loading"}</Popup>
       </Marker>
     </MapContainer>
   );

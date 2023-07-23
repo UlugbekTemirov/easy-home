@@ -10,15 +10,15 @@ function IntroContent() {
   function highlightWord() {
     const text = titleLang[lang];
     return text.replace(
-      /Easy-Home/g,
-      `<span style="color: red;">Easy-Home</span>`
+      /White-Home/g,
+      `<span style="color: red;">White-Home</span>`
     );
   }
 
   const titleLang = {
-    en: "Welcome to Easy-Home : Your One-Stop Shop for Smart Home Solutions",
-    ru: "Добро пожаловать в Easy-Home: ваш магазин решений для умного дома",
-    uz: "Easy-Homega xush kelibsiz: Smart Home yechimlari uchun sizning do'koningiz",
+    en: "Welcome to White-Home : Your One-Stop Shop for Smart Home Solutions",
+    ru: "Добро пожаловать в White-Home: ваш магазин решений для умного дома",
+    uz: "White-Homega xush kelibsiz: Smart Home yechimlari uchun sizning do'koningiz",
   };
 
   const contentLang = {

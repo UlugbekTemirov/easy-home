@@ -1,64 +1,97 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { createSelector } from "reselect";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import HomeProductCard from "./HomeProductCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Translate from "../../../utils/Translate";
 import LanglessRedirect from "../../../components/LanglessRedirect";
+import NothingFound from "../../../components/NothingFound";
+
+//import function
+import {
+  fetchHomeProducts,
+  fetchHomeProductsByCategory,
+} from "../../../redux/homeproducts.slice";
+import HomeProductsLoader from "./HomeProductsLoader";
 
 function HomeProductsList() {
   const swiperRef = React.useRef(null);
-  const productsSelector = createSelector(
-    (state) => state.homeProducts.products,
-    (state) => state.home.activeCategory,
-    (products, activeCategory) => {
-      if (activeCategory === "all") return products;
-      return products.filter((product) => product.category === activeCategory);
-    }
+  const { products, loading, error } = useSelector(
+    (state) => state.homeProducts
   );
+  const { activeCategory } = useSelector((state) => state.home);
+  const dispatch = useDispatch();
 
-  const products = useSelector(productsSelector);
+  useEffect(() => {
+    if (activeCategory === "all") {
+      dispatch(fetchHomeProducts());
+      return;
+    }
+    dispatch(fetchHomeProductsByCategory(activeCategory));
+
+    // eslint-disable-next-line
+  }, [activeCategory]);
+
+  const handleLoading = () => {
+    const array = [1, 2, 3, 4, 5];
+    return array.map((item) => {
+      return (
+        <SwiperSlide key={item}>
+          <HomeProductsLoader />
+        </SwiperSlide>
+      );
+    });
+  };
 
   const renderProducts = () => {
-    return products.map((product) => {
+    return products?.results?.map((product) => {
       return (
-        <SwiperSlide key={product.id}>
+        <SwiperSlide key={product?.id}>
           <HomeProductCard {...product} />
         </SwiperSlide>
       );
     });
   };
 
+  if (error) return <p>Error</p>;
+
   return (
     <div className="products-list mt-12">
-      <Swiper
-        ref={swiperRef}
-        slidesPerView={4}
-        spaceBetween={30}
-        slidesPerGroup={1}
-        loopFillGroupWithBlank={true}
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1280: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-          },
-        }}
-        className="mySwiper"
-      >
-        {renderProducts()}
-      </Swiper>
+      <div className="min-h-[400px]">
+        <Swiper
+          ref={swiperRef}
+          slidesPerView={4}
+          spaceBetween={30}
+          slidesPerGroup={1}
+          loopFillGroupWithBlank={true}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
+          }}
+          className="mySwiper"
+        >
+          {loading ? (
+            handleLoading()
+          ) : products.results && products.results.length === 0 ? (
+            <NothingFound />
+          ) : (
+            renderProducts()
+          )}
+        </Swiper>
+      </div>
 
       <div
         data-aos="fade-up"

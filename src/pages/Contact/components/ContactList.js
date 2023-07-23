@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ContactCard from "./ContactCard";
 import Translate from "../../../utils/Translate";
 
-//import media files
+import { useSelector, useDispatch } from "react-redux";
+import { fetchContactDetails } from "../../../redux/contactDetails.slice";
 
 function ContactList() {
+  const { contactDetails, loading, error } = useSelector(
+    (state) => state.contactDetails
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (contactDetails.address) return;
+    dispatch(fetchContactDetails());
+    //eslint-disable-next-line
+  }, []);
+
   const numberLang = {
     en: "Our numbers",
     uz: "Bizning raqamlarimiz",
@@ -44,8 +56,8 @@ function ContactList() {
           title={numberLang}
         >
           <span>
-            + 61 (2) 8093 3402 <br />
-            +61 (2) 8093 3402
+            {contactDetails?.phone_number1 || "Loading"} <br />
+            {contactDetails?.phone_number2}
           </span>
         </ContactCard>
         <ContactCard
@@ -55,8 +67,8 @@ function ContactList() {
           iconBg="bg-[#ff6d34]"
         >
           <span>
-            admission@gostudy.com <br />
-            info@gostudy.com
+            {contactDetails?.email1 || "Loading"} <br />
+            {contactDetails?.email2}
           </span>
         </ContactCard>
         <ContactCard
@@ -65,10 +77,7 @@ function ContactList() {
           iconBg="bg-[#8dd17e]"
           title={locationLang}
         >
-          <span>
-            Amir Temur ko'chasi <br />
-            5-uy
-          </span>
+          <span>{contactDetails?.address || "Loading"}</span>
         </ContactCard>
       </div>
     </>

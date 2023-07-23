@@ -4,11 +4,14 @@ import SectionHeader from "../../../components/SectionHeader";
 import Container from "../../../layout/Container";
 import ServicesList from "./ServicesList";
 import Translate from "../../../utils/Translate";
+import bgControl from "../../../assets/images/bg-contact.jpg";
 
 //import bg-image
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../../config";
 function Services() {
   const { lang } = useSelector((state) => state.navbar);
+  const { pageImage } = useSelector((state) => state.pageImage);
 
   const title = {
     en: "Services we offer",
@@ -23,7 +26,16 @@ function Services() {
 
   return (
     <Container>
-      <div className="home-services mt-[100px]">
+      <div
+        className="home-services mt-[100px]"
+        style={{
+          background: `url(${
+            pageImage?.home_service
+              ? BASE_URL + pageImage?.home_service
+              : bgControl
+          }) no-repeat bottom right`,
+        }}
+      >
         <SectionHeader titleDict={title} subtitleDict={subtitle} />
         <ServicesList />
         <div data-aos="fade-up" className="my-10">

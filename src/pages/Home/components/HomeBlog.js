@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Container from "../../../layout/Container";
 import SectionHeader from "../../../components/SectionHeader";
 import ActiveBlog from "./ActiveBlog";
@@ -6,12 +6,13 @@ import OtherPosts from "./OtherPosts";
 import { Swiper, SwiperSlide } from "swiper/react";
 import BlogCard from "./BlogCard";
 import { useSelector, useDispatch } from "react-redux";
-import { setActiceBlogId } from "../../../redux/homeBlog.slice";
+import { setActiceBlogId, fetchHomeBlogs } from "../../../redux/homeBlog.slice";
 import SwiperCore, { Pagination } from "swiper";
+import HomeBlogLoader from "./HomeBlogLoader";
 SwiperCore.use([Pagination]);
 
 function HomeBlog() {
-  const { blogs } = useSelector((state) => state.homeBlog);
+  const { blogs, loading, error } = useSelector((state) => state.homeBlog);
   const dispatch = useDispatch();
   const swiperRef = useRef(null);
 
@@ -27,8 +28,16 @@ function HomeBlog() {
     uz: "Aqlli uy texnologiyalarining dunyosidagi yangiliklarni, maslahatlarini, trendlarini, yangiliklarini va boshqalarini ko'ring.",
   };
 
-  const renderOtherPosts = () => {
-    return blogs?.map((item) => {
+  useEffect(() => {
+    if (blogs?.results && blogs?.results?.length > 0) return;
+    dispatch(fetchHomeBlogs());
+
+    //eslint-disable-next-line
+  }, []);
+
+  const renderOtherPosts = (blogs) => {
+    if (!blogs) return;
+    return blogs?.results?.map((item) => {
       return (
         <SwiperSlide className="h-auto" key={item.id}>
           <BlogCard {...item} />
@@ -36,6 +45,14 @@ function HomeBlog() {
       );
     });
   };
+
+  if (loading)
+    return (
+      <Container>
+        <HomeBlogLoader />
+      </Container>
+    );
+  if (error) return;
 
   return (
     <>
@@ -78,7 +95,7 @@ function HomeBlog() {
                   },
                 }}
               >
-                {renderOtherPosts()}
+                {renderOtherPosts(blogs)}
               </Swiper>
             </div>
           </div>

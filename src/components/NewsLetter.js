@@ -3,8 +3,12 @@ import Container from "../layout/Container";
 import SectionHeader from "./SectionHeader";
 import TelMask from "./TelMask";
 import Translate from "../utils/Translate";
+import { ToastContainer, toast } from "react-toastify";
+import { useSelector } from "react-redux";
 
 function NewsLetter() {
+  const { lang } = useSelector((state) => state.navbar);
+
   const titleDict = {
     en: "Subscribe to our newsletter",
     ru: "Подпишитесь на нашу рассылку",
@@ -15,6 +19,12 @@ function NewsLetter() {
     en: "Get the latest news and updates about our products and services.",
     ru: "Получайте последние новости и обновления о наших продуктах и услугах.",
     uz: "Mahsulotlarimiz va xizmatlarimiz haqida so'nggi yangiliklarni va yangilanishlarni oling.",
+  };
+
+  const newsLetterLang = {
+    en: "You have successfully subscribed to our newsletter!",
+    ru: "Вы успешно подписались на нашу рассылку!",
+    uz: "Siz muvaffaqiyatli bizning xabarnomamizga obuna bo'ldingiz!",
   };
 
   return (
@@ -37,7 +47,14 @@ function NewsLetter() {
             />
           </div>
           <div className="h-[51px]">
-            <button className="bg-gradient-to-r px-12 md:px-20 rounded-md rounded-l-none h-full flex items-center justify-center text-white from-primary-0 to-secondary-0">
+            <button
+              onClick={() => {
+                toast.success(
+                  newsLetterLang[lang.toLowerCase()] || newsLetterLang["en"]
+                );
+              }}
+              className="bg-gradient-to-r px-12 md:px-20 rounded-md rounded-l-none h-full flex items-center justify-center text-white from-primary-0 to-secondary-0"
+            >
               <Translate
                 dictionary={{
                   en: "Subscribe",

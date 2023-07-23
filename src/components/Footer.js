@@ -36,13 +36,27 @@ const Footer = () => {
   // #101C32 # previous footer color
 
   return (
-    <div className="bg-footer pt-[80px] pb-5">
+    <div className="bg-footer py-4">
       <Container>
-        <div className="grid md:grid-cols-4 grid-cols-1">
-          <div>
-            <Logo />
+        <div className="">
+          <div className="flex items-center justify-between">
+            <Logo className={"w-[80px]"} />
+            <h1 className="text-gray-400 text-center">
+              Created by
+              <a
+                className="uppercase text-white font-bold"
+                target="_blank"
+                rel="noreferrer"
+                href="https://uniweek.uz"
+              >
+                uniweek technologies
+              </a>
+            </h1>
+            <h1 className="text-gray-400 text-center text-[22px]">
+              <a href="tel:+998 946577959">+998 94 657 79 59</a>
+            </h1>
           </div>
-          <div>
+          {/* <div>
             <h3 className="text-white font-bold text-2xl mb-5">
               <Translate
                 dictionary={{
@@ -63,12 +77,7 @@ const Footer = () => {
                 </Link>
               ))}
             </div>
-          </div>
-        </div>
-        <div>
-          <h1 className="text-gray-400 text-center">
-            Created by uniweek technologies
-          </h1>
+          </div> */}
         </div>
       </Container>
     </div>

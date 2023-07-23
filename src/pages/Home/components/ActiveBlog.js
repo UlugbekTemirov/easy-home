@@ -6,7 +6,8 @@ function ActiveBlog() {
   const selectedBlog = createSelector(
     (state) => state.homeBlog.blogs,
     (state) => state.homeBlog.activeblogId,
-    (blogs, activeblogId) => blogs.find((blog) => blog.id === activeblogId)
+    (blogs, activeblogId) =>
+      blogs?.results?.find((blog) => blog.id === activeblogId)
   );
 
   const activeBlog = useSelector(selectedBlog);
@@ -20,6 +21,8 @@ function ActiveBlog() {
     const swiper = document.querySelector("#other-posts").swiper;
     swiper.slideNext();
   };
+
+  if (!activeBlog) return;
 
   return (
     <div className="active-post mt-[100px]">

@@ -4,12 +4,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Translate from "../../../utils/Translate";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../../config";
 
-import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
-SwiperCore.use([Autoplay, Navigation, Pagination]);
+import SwiperCore, {
+  Autoplay,
+  Navigation,
+  Pagination,
+  EffectFade,
+} from "swiper";
+SwiperCore.use([Autoplay, Navigation, Pagination, EffectFade]);
 
 function HomeSwiper() {
   const { lang } = useSelector((state) => state.navbar);
+  const { pageImage } = useSelector((state) => state.pageImage);
+
+  const slideImages = [
+    pageImage?.home_slider1,
+    pageImage?.home_slider2,
+    pageImage?.home_slider3,
+  ];
 
   const renderSlides = () => {
     return slides.map((slide, index) => {
@@ -18,7 +31,9 @@ function HomeSwiper() {
           <div
             className=" min-h-screen pt-[150px] md:pt-[200px] swiper-slide px-5 md:px-0 ]"
             style={{
-              background: `url(${slide.image}) no-repeat center center/cover`,
+              background: `url(${
+                slideImages[index] ? BASE_URL + slideImages[index] : slide.image
+              }) no-repeat center center/cover`,
             }}
           >
             <div className="swiper-slide__content flex flex-col items-center">
@@ -64,6 +79,7 @@ function HomeSwiper() {
         }}
         pagination
         speed={1200}
+        effect="fade"
       >
         {renderSlides()}
       </Swiper>

@@ -38,6 +38,7 @@ const categoriesSlice = createSlice({
     [fetchCategories.fulfilled]: (state, action) => {
       state.loading = false;
       state.categories = action.payload;
+      if (!action.payload || !action.payload.results) return;
       state.categories.results.unshift({
         id: "all",
         name: {

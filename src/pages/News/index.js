@@ -2,16 +2,26 @@ import React from "react";
 import BgCover from "../../components/BgCover";
 import Sidebar from "./components/Sidebar";
 import NewsList from "./components/NewsList";
+import PageImage from "../../components/PageImage";
+import { BASE_URL } from "../../config";
+import { useSelector } from "react-redux";
 const Index = () => {
+  const { pageImage } = useSelector((state) => state.pageImage);
+
   return (
     <div>
+      <PageImage />
       <BgCover
         title={{
           uz: "Yangiliklar",
           ru: "Новости",
           en: "News",
         }}
-        image="https://thumbs.dreamstime.com/b/news-header-background-title-abstract-colorful-global-map-text-hightech-design-blue-colorful-template-90494676.jpg"
+        image={`${
+          pageImage?.news
+            ? BASE_URL + pageImage?.news
+            : "https://thumbs.dreamstime.com/b/news-header-background-title-abstract-colorful-global-map-text-hightech-design-blue-colorful-template-90494676.jpg"
+        }`}
       />
       <main className="py-10">
         <div className="container">

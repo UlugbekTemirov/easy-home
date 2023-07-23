@@ -1,1 +1,1 @@
-export const BASE_URL = "https://backend.whitehome.uz/";
+export const BASE_URL = "https://backend.knxhome.uz/";

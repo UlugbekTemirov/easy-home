@@ -4,8 +4,11 @@ import React from "react";
 import leftSideBg from "../../../assets/images/BOT923.jpeg";
 import rightSideBg from "../../../assets/images/group-face.jpg";
 import Translate from "../../../utils/Translate";
+import { useSelector } from "react-redux";
 
 function ContactFooter() {
+  const { contactDetails } = useSelector((state) => state.contactDetails);
+
   return (
     <div className="footer flex items-center h-[350px] md:h-[480px]">
       <div
@@ -46,9 +49,17 @@ function ContactFooter() {
             />
           </h3>
           <button className="inline-block mr-auto px-12 py-[14px] font-bold rounded-sm border-none shadow-sm mt-5 bg-white text-btnPink hover:bg-btnPink hover:text-[#fff] transition-colors duration-300">
-            <Translate
-              dictionary={{ uz: "Bog'lanish", ru: "Контакт", en: "Contact" }}
-            />
+            <a
+              href={`${
+                contactDetails?.phone_number1
+                  ? `tel:${contactDetails.phone_number1}`
+                  : "!#"
+              }`}
+            >
+              <Translate
+                dictionary={{ uz: "Bog'lanish", ru: "Контакт", en: "Contact" }}
+              />
+            </a>
           </button>
         </div>
       </div>

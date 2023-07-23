@@ -3,7 +3,7 @@ import Translate from "../../../utils/Translate";
 import DateFormatter from "../../../utils/DateFormatter";
 import LanglessRedirect from "../../../components/LanglessRedirect";
 
-function BlogCard({ slug, title, image, date }) {
+function BlogCard({ slug, title, image, updated_at }) {
   return (
     <div className="blog-card">
       <LanglessRedirect to={`/news/${slug}`}>
@@ -25,7 +25,7 @@ function BlogCard({ slug, title, image, date }) {
             </p>
             <div className="flex gap-2 items-center">
               <i class="fa-regular fa-calendar"></i>
-              <DateFormatter date={date} />
+              <DateFormatter date={updated_at} />
             </div>
           </div>
         </div>

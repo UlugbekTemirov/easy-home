@@ -15,6 +15,7 @@ import "aos/dist/aos.css";
 // components
 import Loader from "./components/Loader";
 import Main from "./layout/Main";
+import { ToastContainer } from "react-toastify";
 
 // utils
 import LanguageRoute from "./utils/LanguageRoute";
@@ -22,6 +23,8 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/swiper-bundle.css";
+import "react-toastify/dist/ReactToastify.css";
+import PageImage from "./components/PageImage";
 
 function App() {
   const Home = lazy(() => import("./pages/Home"));
@@ -80,6 +83,7 @@ function App() {
 
   return (
     <Router>
+      <ToastContainer theme="colored" />
       <Suspense fallback={<Loader />}>
         <Main>
           <Routes>

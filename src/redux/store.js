@@ -16,6 +16,9 @@ import productsCategories from "./productsCategories.slice";
 import singleProduct from "./singleProducts.slice";
 import services from "./services.slice";
 import singleService from "./singleService.slice";
+import homeServices from "./homeservices.slice";
+import pageImage from "./pageImage.slice";
+import contactDetails from "./contactDetails.slice";
 
 export const store = configureStore({
   reducer: {
@@ -36,6 +39,9 @@ export const store = configureStore({
     services,
     singleService,
     singleNews,
+    homeServices,
+    pageImage,
+    contactDetails,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
   devTools: process.env.NODE_ENV !== "production",

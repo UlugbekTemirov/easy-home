@@ -1,39 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { product_cats } from "../../../db/categories.db";
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveCategory } from "../../../redux/home.slice";
 import classnames from "classnames";
 import Translate from "../../../utils/Translate";
 import GradientBtn from "../../../components/GradientBtn";
+import { fetchProductsCategories } from "../../../redux/productsCategories.slice";
 
 function HomeProductCategories() {
   const { activeCategory } = useSelector((state) => state.home);
+  const { productsCategories, loading, error } = useSelector(
+    (state) => state.productsCategories
+  );
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (productsCategories.length > 0) return;
+    dispatch(fetchProductsCategories());
+
+    // eslint-disable-next-line
+  }, []);
 
   const handleCategoryChange = (category) => {
     dispatch(setActiveCategory(category));
   };
 
-  const allCategory = {
-    id: 0,
-    name: {
-      uz: "Barchasi",
-      ru: "Все",
-      en: "All",
-    },
-    value: "all",
-  };
-
-  const renderCategories = () => {
-    return product_cats.map((category) => {
+  const renderCategories = (product_cats) => {
+    return product_cats?.map((category) => {
       const classNames = classnames("category-item", {
-        active: activeCategory === category.value,
+        active: activeCategory === category.slug,
       });
       return (
         <GradientBtn
           key={category.id}
           className={`${classNames}`}
-          onClick={() => handleCategoryChange(category.value)}
+          onClick={() => handleCategoryChange(category.slug)}
         >
           <Translate dictionary={category.name} />
         </GradientBtn>
@@ -46,13 +47,7 @@ function HomeProductCategories() {
       data-aos="fade-up"
       className="flex items-center justify-center gap-1 flex-wrap"
     >
-      <GradientBtn
-        className={`category-item ${activeCategory === "all" ? "active" : ""}`}
-        onClick={() => handleCategoryChange(allCategory.value)}
-      >
-        <Translate dictionary={allCategory.name} />
-      </GradientBtn>
-      {renderCategories()}
+      {loading && error ? null : renderCategories(productsCategories?.results)}
     </div>
   );
 }

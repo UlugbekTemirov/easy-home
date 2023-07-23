@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTeamMembers } from "../../../redux/team.slice";
 
-import team from "../../../db/team.db";
 import { headers } from "../../../db/team.db";
 import Translate from "../../../utils/Translate";
 import SocialLine from "./SocialLine";
@@ -27,7 +26,7 @@ const TeamMembers = () => {
     "#6B7280",
   ];
 
-  if (teamMembers.length === 0) return null;
+  if (!teamMembers || !teamMembers.length) return;
 
   return (
     <div data-aos="fade-up">

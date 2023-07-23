@@ -335,9 +335,3 @@ h1 {
     background-image: none;
   }
 }
-
-@media (min-width: 767px) {
-  .home-services {
-    background-image: url(./assets/images/bg-control.jpg);
-  }
-}

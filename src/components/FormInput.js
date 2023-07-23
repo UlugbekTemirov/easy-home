@@ -9,6 +9,7 @@ function FormInput({
   placeholder,
   onChange = () => {},
   className = "",
+  required = true,
 }) {
   const { lang } = useSelector((state) => state.navbar);
 
@@ -19,7 +20,6 @@ function FormInput({
       placeholder={placeholder[lang.toLowerCase()]}
       onChange={onChange}
       name={name}
-      required
     />
   );
 }

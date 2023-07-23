@@ -43,6 +43,7 @@ const productsCategoriesSlice = createSlice({
     [fetchProductsCategories.fulfilled]: (state, action) => {
       state.loading = false;
       state.productsCategories = action.payload;
+      if (!action.payload || !action.payload.results) return;
       state.productsCategories.results.unshift({
         id: "all",
         name: {

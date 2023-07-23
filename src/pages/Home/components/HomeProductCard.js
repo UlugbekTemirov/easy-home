@@ -4,7 +4,7 @@ import Translate from "../../../utils/Translate";
 import Price from "../../Products/components/Price";
 import LanglessRedirect from "../../../components/LanglessRedirect";
 
-function HomeProductCard({ name, price, image, slug }) {
+function HomeProductCard({ name, price_uzs, image, slug }) {
   return (
     <div data-aos="fade-up" data-aos-delay="100" className="home-product">
       <GradientBorderElementOnHover>
@@ -29,7 +29,7 @@ function HomeProductCard({ name, price, image, slug }) {
         </p>
       </LanglessRedirect>
       <p className="product-price text-[#00c6ff] font-bold mb-3">
-        <Price price={price} sumClassname="text-[#00c6ff]" />
+        <Price price={price_uzs} sumClassname="text-[#00c6ff]" />
       </p>
     </div>
   );

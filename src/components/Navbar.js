@@ -104,7 +104,7 @@ const Navbar = () => {
         }}
         className={`${
           top > 50 ? "bg-white/[0.8] shadow-2xl" : "bg-transparent"
-        } h-[80px] duration-500 flex items-center fixed rounded-b-[0px] ${
+        } duration-500 flex items-center fixed rounded-b-[0px] ${
           downScroll ? "-top-[80px] shadow-none" : "top-0"
         } w-full z-[200]`}
       >
