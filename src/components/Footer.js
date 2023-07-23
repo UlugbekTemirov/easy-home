@@ -3,35 +3,32 @@ import React from "react";
 // layout
 import Container from "../layout/Container";
 import Logo from "./Logo";
-import { Link } from "react-router-dom";
-import Translate from "../utils/Translate";
-import { useSelector } from "react-redux";
 
 const Footer = () => {
-  const navigation = [
-    {
-      title: { uz: "Biz haqimizda", ru: "О нас", en: "About Us" },
-      link: "/about",
-    },
-    {
-      title: { uz: "Mahsulotlar", ru: "Продукты", en: "Products" },
-      link: "/products",
-    },
-    {
-      title: { uz: "Xizmatlar", ru: "Услуги", en: "Services" },
-      link: "/services",
-    },
-    {
-      title: { uz: "Yangiliklar", ru: "Новости", en: "News" },
-      link: "/news",
-    },
-    {
-      title: { uz: "Aloqa", ru: "Контакт", en: "Contact" },
-      link: "/contact",
-    },
-  ];
+  // const navigation = [
+  //   {
+  //     title: { uz: "Biz haqimizda", ru: "О нас", en: "About Us" },
+  //     link: "/about",
+  //   },
+  //   {
+  //     title: { uz: "Mahsulotlar", ru: "Продукты", en: "Products" },
+  //     link: "/products",
+  //   },
+  //   {
+  //     title: { uz: "Xizmatlar", ru: "Услуги", en: "Services" },
+  //     link: "/services",
+  //   },
+  //   {
+  //     title: { uz: "Yangiliklar", ru: "Новости", en: "News" },
+  //     link: "/news",
+  //   },
+  //   {
+  //     title: { uz: "Aloqa", ru: "Контакт", en: "Contact" },
+  //     link: "/contact",
+  //   },
+  // ];
 
-  const { lang } = useSelector((state) => state.navbar);
+  // const { lang } = useSelector((state) => state.navbar);
 
   // #101C32 # previous footer color
 
