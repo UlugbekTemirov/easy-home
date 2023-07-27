@@ -39,7 +39,7 @@ const Footer = () => {
           <div className="flex items-center justify-between">
             <Logo className={"w-[80px]"} />
             <h1 className="text-gray-400 text-center">
-              Created by
+              Created by{"  "}
               <a
                 className="uppercase text-white font-bold"
                 target="_blank"
