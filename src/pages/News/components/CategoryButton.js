@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // helpers
 import {
@@ -9,10 +9,12 @@ import {
 } from "../../../utils/helpers";
 
 import { useLocation, useNavigate } from "react-router-dom";
+import { setActiveCategoryId } from "../../../redux/newsCategories.slice";
 
 const CategoryButton = ({ category, index }) => {
   const [location, navigate] = [useLocation(), useNavigate()];
   const { categories } = useSelector((state) => state.newsCategories);
+  const dispatch = useDispatch();
 
   if (categories.results && categories?.results.length <= 0) {
     return <h1>Not found...</h1>;
@@ -23,6 +25,7 @@ const CategoryButton = ({ category, index }) => {
       onClick={(e) => {
         e.preventDefault();
         categorySearchHandler(category, location, navigate);
+        dispatch(setActiveCategoryId(category?.id));
       }}
       className={`${
         category_colors[index % category_colors.length]

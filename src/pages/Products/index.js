@@ -31,7 +31,7 @@ const Index = () => {
             <Sidebar />
           </div>
           <div className="xl:col-span-7 col-span-1">
-            <Topbar />
+            {/* <Topbar /> */}
             <ProductsList />
           </div>
         </div>

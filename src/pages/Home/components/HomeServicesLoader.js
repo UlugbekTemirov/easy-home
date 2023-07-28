@@ -11,6 +11,7 @@ function HomeServicesLoader({ items = 3 }) {
     return itemsArray.map((item) => {
       return (
         <ContentLoader
+          key={item}
           className="col-span-1"
           speed={2}
           width="100%"

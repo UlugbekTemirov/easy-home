@@ -7,9 +7,10 @@ function ServiceSkeletLoader({ items = 2 }) {
     for (let i = 0; i < items; i++) {
       itemsArray.push(i);
     }
-    return itemsArray.map(() => {
+    return itemsArray.map((item) => {
       return (
         <ContentLoader
+          key={item}
           viewBox="0 0 100% 400"
           width="100%"
           className="mb-5 md:mb-10"

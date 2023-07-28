@@ -28,9 +28,9 @@ function HomeProductCard({ name, price_uzs, image, slug }) {
           <Translate dictionary={name} />
         </p>
       </LanglessRedirect>
-      <p className="product-price text-[#00c6ff] font-bold mb-3">
+      <div className="product-price text-[#00c6ff] font-bold mb-3">
         <Price price={price_uzs} sumClassname="text-[#00c6ff]" />
-      </p>
+      </div>
     </div>
   );
 }

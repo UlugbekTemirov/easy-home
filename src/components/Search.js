@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 const Search = ({ setSearchValue, page, value = "" }) => {
   const [location, navigate] = [useLocation(), useNavigate()];
   const { lang } = useSelector((state) => state.navbar);
+  const { activeCategory } = useSelector((state) => state.productsCategories);
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const search = searchParams.get("search");
@@ -48,6 +49,13 @@ const Search = ({ setSearchValue, page, value = "" }) => {
               dispatch(setSearchValue(e.target.value));
               if (e.target.value === "") {
                 navigate(`/${lang}/${page}`);
+              }
+              if (page === "products" && e.target.value === "") {
+                if (activeCategory === "all") {
+                  navigate(`/${lang}/${page}`);
+                } else {
+                  navigate(`/${lang}/${page}?category=${activeCategory}`);
+                }
               }
             }}
           />

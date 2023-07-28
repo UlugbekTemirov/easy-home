@@ -62,7 +62,6 @@ function HomeProductsList() {
           slidesPerView={4}
           spaceBetween={30}
           slidesPerGroup={1}
-          loopFillGroupWithBlank={true}
           breakpoints={{
             320: {
               slidesPerView: 1,

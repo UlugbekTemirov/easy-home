@@ -24,7 +24,7 @@ function BlogCard({ slug, title, image, updated_at }) {
               <Translate dictionary={title} />
             </p>
             <div className="flex gap-2 items-center">
-              <i class="fa-regular fa-calendar"></i>
+              <i className="fa-regular fa-calendar"></i>
               <DateFormatter date={updated_at} />
             </div>
           </div>

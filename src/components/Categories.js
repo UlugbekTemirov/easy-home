@@ -52,7 +52,7 @@ const Categories = () => {
             const btnClassname = classNames(
               "flex justify-between items-center cursor-pointer p-3 hover:bg-main hover:text-white rounded-lg w-full",
               {
-                "bg-main text-white": activeCategoryId === item.id,
+                "bg-main text-white": +activeCategoryId === item.id,
               }
             );
             return (

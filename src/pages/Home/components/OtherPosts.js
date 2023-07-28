@@ -40,7 +40,7 @@ function OtherPosts() {
         </p>
 
         <p className="flex gap-2 items-center mt-3">
-          <i class="fa-regular fa-calendar"></i>
+          <i className="fa-regular fa-calendar"></i>
           <DateFormatter date={activeBlog?.updated_at} />
         </p>
         <div className="flex justify-between items-center mt-10 mb-5 md:mb-0">

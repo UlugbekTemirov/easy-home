@@ -5,7 +5,7 @@ const initialState = {
   news: [],
   loading: true,
   error: null,
-  searchValue: null,
+  searchValue: "",
   loadMoreLoading: false,
   loadMoreError: null,
 };

@@ -11,6 +11,7 @@ const ProductListLoader = ({ items = 4 }) => {
     return arr.map((item, index) => {
       return (
         <ContentLoader
+          key={index}
           viewBox="0 0 400 300"
           backgroundColor="#f3f3f3"
           foregroundColor="#ecebeb"
