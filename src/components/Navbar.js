@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { solutionsList } from "../db/solutions.db";
 
 // layout
 import Container from "../layout/Container";
@@ -18,6 +19,8 @@ import Logo from "./Logo";
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import { setNavbarHidden } from "../redux/navbar.slice";
+import SolutionsNavBnt from "./SolutionsNavBnt";
+import ServicesNavBtn from "./ServicesNavBtn";
 
 const links = [
   {
@@ -37,15 +40,6 @@ const links = [
       en: "Products",
     },
     path: "/products",
-  },
-  {
-    id: 4,
-    name: {
-      uz: "Xizmatlar",
-      ru: "Услуги",
-      en: "Services",
-    },
-    path: "/services",
   },
   {
     id: 5,
@@ -118,6 +112,24 @@ const Navbar = () => {
             />
             <div className="md:flex items-center hidden">
               <div className="flex items-center gap-7">
+                <SolutionsNavBnt
+                  top={top}
+                  content={
+                    <div className="flex flex-col gap-1">
+                      {solutionsList.map(({ id, name, slug }) => (
+                        <Link
+                          key={id}
+                          className="text-[#7a7777] hover:text-primary duration-200 px-2 border-b border-black"
+                          onClick={close}
+                          to={`${lang}/solutions/${slug}`}
+                        >
+                          <Translate dictionary={name} />
+                        </Link>
+                      ))}
+                    </div>
+                  }
+                />
+                <ServicesNavBtn />
                 {links.map(({ id, path, name }) => (
                   <Link
                     key={id}
@@ -130,8 +142,9 @@ const Navbar = () => {
                     <Translate dictionary={name} />
                   </Link>
                 ))}
+
+                <SelectLang />
               </div>
-              <SelectLang />
             </div>
           </div>
         </Container>

@@ -12,7 +12,7 @@ export const fetchServices = createAsyncThunk(
   async () => {
     const { request } = useHttp();
     const response = await request({
-      url: `/api/v1/service/`,
+      url: `/api/v1/service/?page_szie=100`,
       method: "GET",
       headers: {
         "Content-Type": "application/json",

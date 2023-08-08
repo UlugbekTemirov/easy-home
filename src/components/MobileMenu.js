@@ -1,16 +1,22 @@
 // react-router-dom
 import { Link } from "react-router-dom";
+import { solutionsList } from "../db/solutions.db";
+import { useSelector } from "react-redux";
 
 //translate
 import Translate from "../utils/Translate";
 
 // components
-import GlobalSearch from "./GlobalSearch";
 import { useEffect } from "react";
 import HamburgerButton from "./Hamburger";
 import Logo from "./Logo";
+import SelectLang from "./SelectLang";
+import SolutionsNavBnt from "./SolutionsNavBnt";
+import ServicesNavBtn from "./ServicesNavBtn";
 
 const MobileMenu = ({ open, routes, close }) => {
+  const { lang } = useSelector((state) => state.navbar);
+
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -46,6 +52,7 @@ const MobileMenu = ({ open, routes, close }) => {
           <div className="mb-5">
             <Logo onClick={close} />
           </div>
+
           <div className="flex flex-col gap-5 text-secondary">
             {routes.map(({ id, name, path }) => (
               <Link onClick={close} className="text-xl" to={path} key={id}>
@@ -53,8 +60,27 @@ const MobileMenu = ({ open, routes, close }) => {
               </Link>
             ))}
           </div>
+          <SolutionsNavBnt
+            content={
+              <div className="flex flex-col gap-1">
+                {solutionsList.map(({ id, name, slug }) => (
+                  <Link
+                    key={id}
+                    className="text-[#7a7777] hover:text-primary duration-200 px-2 border-b border-black"
+                    onClick={close}
+                    to={`${lang}/solutions/${slug}`}
+                  >
+                    <Translate dictionary={name} />
+                  </Link>
+                ))}
+              </div>
+            }
+          />
           <div>
-            <GlobalSearch />
+            <ServicesNavBtn />
+          </div>
+          <div className="mt-5">
+            <SelectLang />
           </div>
         </div>
         <div>

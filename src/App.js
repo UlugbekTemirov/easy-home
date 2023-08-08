@@ -24,7 +24,6 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/swiper-bundle.css";
 import "react-toastify/dist/ReactToastify.css";
-import PageImage from "./components/PageImage";
 
 function App() {
   const Home = lazy(() => import("./pages/Home"));
@@ -37,6 +36,7 @@ function App() {
   const SingleNews = lazy(() => import("./pages/SingleNews"));
   const SingleService = lazy(() => import("./pages/SingleService"));
   const NotFound = lazy(() => import("./pages/NotFound"));
+  const Solutions = lazy(() => import("./pages/Solutions"));
 
   useEffect(() => {
     AOS.init();
@@ -78,6 +78,10 @@ function App() {
     {
       path: "/products/:slug",
       element: Product,
+    },
+    {
+      path: "/solutions/:slug",
+      element: Solutions,
     },
   ];
 

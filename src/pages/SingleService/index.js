@@ -24,7 +24,7 @@ const Index = () => {
     dispatch(fetchSingleService(slug));
 
     // eslint-disable-next-line
-  }, []);
+  }, [slug]);
 
   const loadingProduct = {
     en: "Loading...",

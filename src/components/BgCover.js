@@ -47,7 +47,7 @@ const BgCover = ({ image, title }) => {
             data-aos="fade-up"
             data-aos-delay="100"
             data-aos-duration="800"
-            className="font-bold md:text-5xl text-3xl tracking-[5px] text-white md:mb-8 mb-4 text-center"
+            className="font-bold md:text-5xl text-3xl tracking-[5px] text-white md:mb-8 mb-4 text-center capitalize"
           >
             <Translate dictionary={title} />
           </h1>

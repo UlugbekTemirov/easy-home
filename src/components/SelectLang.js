@@ -33,7 +33,7 @@ const SelectLang = () => {
   }, [lang]);
 
   return (
-    <div className="relative pl-4">
+    <div className="relative md:pl-4">
       <select
         value={lang}
         onChange={(e) => dispatch(setLang(e.target.value.toLowerCase()))}
