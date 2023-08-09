@@ -14,6 +14,8 @@ function ServicesNavBtn({ content, top }) {
   useEffect(() => {
     if (services.results) return;
     dispatch(fetchServices());
+
+    //eslint-disable-next-line
   }, []);
 
   const toggleDropdown = () => {

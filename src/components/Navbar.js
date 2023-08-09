@@ -113,23 +113,7 @@ const Navbar = () => {
             />
             <div className="md:flex items-center hidden">
               <div className="flex items-center gap-7">
-                <SolutionsNavBnt
-                  top={top}
-                  content={
-                    <div className="flex flex-col gap-1">
-                      {solutionsList.map(({ id, name, slug }) => (
-                        <Link
-                          key={id}
-                          className="text-[#7a7777] hover:text-primary duration-200 px-2 border-b border-black"
-                          onClick={close}
-                          to={`${lang}/solutions/${slug}`}
-                        >
-                          <Translate dictionary={name} />
-                        </Link>
-                      ))}
-                    </div>
-                  }
-                />
+                <SolutionsNavBnt top={top} />
                 <ServicesNavBtn top={top} />
                 {links.map(({ id, path, name }) => (
                   <Link

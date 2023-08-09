@@ -61,20 +61,7 @@ const MobileMenu = ({ open, routes, close }) => {
             ))}
           </div>
           <SolutionsNavBnt
-            content={
-              <div className="flex flex-col gap-1">
-                {solutionsList.map(({ id, name, slug }) => (
-                  <Link
-                    key={id}
-                    className="text-[#7a7777] hover:text-primary duration-200 px-2 border-b border-black"
-                    onClick={close}
-                    to={`${lang}/solutions/${slug}`}
-                  >
-                    <Translate dictionary={name} />
-                  </Link>
-                ))}
-              </div>
-            }
+            content={<div className="flex flex-col gap-1"></div>}
           />
           <div>
             <ServicesNavBtn />

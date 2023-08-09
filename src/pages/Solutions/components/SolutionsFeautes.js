@@ -10,7 +10,7 @@ function SolutionsFeautes({ features }) {
       return (
         <div
           key={index}
-          className="single-icon-box flex items-center gap-2 lg:gap-8"
+          className="single-icon-box flex items-center gap-2 lg:gap-8 my-4"
         >
           <div className="w-[45px] h-[45px] lg:w-[60px] lg:h-[60px]">
             <img
