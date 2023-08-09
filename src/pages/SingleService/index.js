@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import BgCover from "../../components/BgCover";
-import services from "../../db/service.db";
 import { useParams } from "react-router-dom";
-import { findTargetItemHandler } from "../../utils/helpers";
 import ServiceSlider from "./components/ServiceSlider";
 import Container from "../../layout/Container";
 
@@ -13,7 +11,6 @@ import ServiceSkeletLoader from "../Services/components/ServiceSkeletLoader";
 const Index = () => {
   const { slug } = useParams();
   const dispatch = useDispatch();
-  const service = findTargetItemHandler(slug, services);
   const { singleService, loading, error } = useSelector(
     (state) => state.singleService
   );

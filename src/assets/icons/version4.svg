@@ -3,7 +3,7 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #5878a5;
+        fill: #0052be;
         font-family: MerriweatherSansRoman-Bold, 'Merriweather Sans';
         font-size: 45.24px;
         font-variation-settings: 'wght' 700;
@@ -11,7 +11,7 @@
       }
 
       .cls-2, .cls-3 {
-        fill: #647aa3;
+        fill: #0052be;
       }
 
       .cls-4 {
@@ -19,7 +19,7 @@
       }
 
       .cls-4, .cls-5, .cls-3, .cls-6 {
-        stroke: #647aa3;
+        stroke: #0052be;
         stroke-miterlimit: 10;
       }
 

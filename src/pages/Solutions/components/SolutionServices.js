@@ -24,19 +24,19 @@ function SolutionServices({ services }) {
               <p
                 className={`text-[#0045b7] font-bold text-[1.5rem] lg:text-[1.5rem] xl:text-[2rem]`}
               >
-                <Translate dictionary={item?.title} />
+                <Translate dictionary={item?.name} />
               </p>
               <p className="text-[20px] leading-16 font-[300] mt-6">
-                <Translate dictionary={item?.content} />
+                <Translate dictionary={item?.description} />
               </p>
             </div>
-            <SolutionsFeautes features={item?.features} />
+            <SolutionsFeautes features={item?.key_features} />
           </div>
           <div className="righ-side w-full lg:w-3/5">
             <img
-              className="w-full h-auto
+              className="w-full h-auto rounded-md
             "
-              src={item.image && randomImage}
+              src={item.image ? item.image : randomImage}
               alt=""
             />
           </div>

@@ -8,7 +8,11 @@ const Logo = ({ onClick, className }) => {
 
   return (
     <Link onClick={onClick} to={`${lang}`}>
-      <img className={`w-[150px] ${className}`} src={logo} alt="logo" />
+      <img
+        className={`w-[100px] md:w-[130px] ${className}`}
+        src={logo}
+        alt="logo"
+      />
     </Link>
   );
 };

@@ -87,6 +87,7 @@ const Navbar = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+    //eslint-disable-next-line
   }, [top]);
 
   return (
@@ -99,8 +100,8 @@ const Navbar = () => {
         className={`${
           top > 50 ? "bg-white/[0.8] shadow-2xl" : "bg-transparent"
         } duration-500 flex items-center fixed rounded-b-[0px] ${
-          downScroll ? "-top-[80px] shadow-none" : "top-0"
-        } w-full z-[200]`}
+          downScroll ? "-top-[120px] shadow-none" : "top-0"
+        } w-full z-[400]`}
       >
         <Container>
           <div className="flex justify-between items-center">
@@ -129,7 +130,7 @@ const Navbar = () => {
                     </div>
                   }
                 />
-                <ServicesNavBtn />
+                <ServicesNavBtn top={top} />
                 {links.map(({ id, path, name }) => (
                   <Link
                     key={id}
