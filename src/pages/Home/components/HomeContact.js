@@ -41,7 +41,7 @@ function HomeContact() {
           <div className="hidden xl:block absolute right-[50%] bottom-[-80px] translate-x-[-50%]">
             <img src={contactPhone} alt="" />
           </div>
-          <div data-aos="fade-left" data-aos-delay="300">
+          <div data-aos="fade-up" data-aos-delay="300">
             <CustomForm
               onSubmit={(e) => {
                 e.preventDefault();

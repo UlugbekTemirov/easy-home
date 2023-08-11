@@ -68,10 +68,10 @@ function HomeBlog() {
         </div>
       </Container>
       <div className="blog-content grid grid-cols-1 lg:grid-cols-2 gap-20  w-full mx-auto px-[12px] md:px-[120px]">
-        <div data-aos="fade-right" className="col-span-1">
+        <div data-aos="fade-up" className="col-span-1">
           <ActiveBlog />
         </div>
-        <div data-aos="fade-left" className="col-span-1">
+        <div data-aos="fade-up" className="col-span-1">
           <div className="h-full flex flex-col justify-between">
             <OtherPosts />
             <div className="w-full">
