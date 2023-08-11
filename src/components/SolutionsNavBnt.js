@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchSoltuions } from "../redux/solutions.slice";
 
-function SolutionsNavBnt({ content, top }) {
+function SolutionsNavBnt({ close, top }) {
   const [isOpen, setIsOpen] = useState(false);
   const { solutions, loading } = useSelector((state) => state.solutions);
   const { lang } = useSelector((state) => state.navbar);
@@ -63,6 +63,7 @@ function SolutionsNavBnt({ content, top }) {
               return (
                 <Link
                   to={`${lang}/solutions/${solution.slug}`}
+                  onClick={close}
                   className="text-[#7a7777] hover:text-primary duration-200 px-2 border-b border-black"
                   key={solution.id}
                 >

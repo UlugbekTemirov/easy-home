@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchServices } from "../redux/services.slice";
 import { Link } from "react-router-dom";
 
-function ServicesNavBtn({ content, top }) {
+function ServicesNavBtn({ close, top }) {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
   const { services, loading } = useSelector((state) => state.services);
@@ -62,6 +62,7 @@ function ServicesNavBtn({ content, top }) {
             services.results.map((service) => {
               return (
                 <Link
+                  onClick={close}
                   to={`${lang}/services/${service.slug}`}
                   className="text-[#7a7777] hover:text-primary duration-200 px-2 border-b border-black"
                   key={service.id}

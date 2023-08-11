@@ -15,8 +15,6 @@ import SolutionsNavBnt from "./SolutionsNavBnt";
 import ServicesNavBtn from "./ServicesNavBtn";
 
 const MobileMenu = ({ open, routes, close }) => {
-  const { lang } = useSelector((state) => state.navbar);
-
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -30,20 +28,20 @@ const MobileMenu = ({ open, routes, close }) => {
     <div>
       <div
         onClick={close}
-        className={`fixed top-0 left-0 duration-700 transition-colors h-screen ${
+        className={`fixed top-0 left-0 duration-700 transition-colors h-screen overflow-hidden max-w-screen ${
           open
-            ? "bg-black/[0.5] z-[201] w-full"
+            ? "bg-black/[0.5] z-[450] w-full"
             : "bg-transparent w-0 overflow-hidden"
         }`}
       ></div>
       <div
-        className={`bg-white rounded-l-xl flex flex-col justify-between fixed right-0 duration-500 z-[201] top-0 w-[80%] py-5 px-5 ${
+        className={`bg-white rounded-l-xl flex flex-col justify-between fixed right-0 duration-500 z-[450] top-0 w-[80%] py-5 px-5 ${
           open ? "translate-x-0 shadow-2xl" : "translate-x-full"
         }  h-screen`}
       >
         <div>
           <div
-            className={`absolute top-5 -left-12 bg-white rounded-md p-1 ${
+            className={`absolute top-[28px] right-2 bg-white rounded-md p-1 ${
               open ? "" : "hidden"
             }`}
           >
@@ -61,10 +59,11 @@ const MobileMenu = ({ open, routes, close }) => {
             ))}
           </div>
           <SolutionsNavBnt
+            close={close}
             content={<div className="flex flex-col gap-1"></div>}
           />
           <div>
-            <ServicesNavBtn />
+            <ServicesNavBtn close={close} />
           </div>
           <div className="mt-5">
             <SelectLang />
