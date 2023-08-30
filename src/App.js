@@ -24,6 +24,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/swiper-bundle.css";
 import "react-toastify/dist/ReactToastify.css";
+import Welcome from "./components/Welcome";
 
 function App() {
   const Home = lazy(() => import("./pages/Home"));
@@ -88,6 +89,7 @@ function App() {
   return (
     <Router>
       <ToastContainer theme="colored" />
+      <Welcome />
       <Suspense fallback={<Loader />}>
         <Main>
           <Routes>

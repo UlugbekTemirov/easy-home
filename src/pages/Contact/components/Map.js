@@ -8,9 +8,10 @@ import { useSelector } from "react-redux";
 
 function Map() {
   const { contactDetails } = useSelector((state) => state.contactDetails);
+  console.log(contactDetails);
   const position = [
-    contactDetails?.address_long || 51.505,
-    contactDetails?.address_long || -0.09,
+    contactDetails?.address_long || 41.3159168,
+    contactDetails?.address_long || 69.291544,
   ];
   const customIcon = L.icon({
     iconUrl: locationIcon,
@@ -23,7 +24,7 @@ function Map() {
     <MapContainer
       className="h-full z-0"
       center={position}
-      zoom={13}
+      zoom={17}
       scrollWheelZoom={false}
     >
       <TileLayer

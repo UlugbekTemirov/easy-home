@@ -12,10 +12,11 @@ function HomeProductCard({ name, price_uzs, image, slug }) {
           <div
             style={{
               backgroundImage: `url(${image}) `,
+              backgroundSize: "contain",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
-            className="image-box cursor-pointer h-[400px] max-h-[400px] relative pointer border-2 rounded-[10px] hover:border-transparent"
+            className="image-box cursor-pointer h-[300px] max-h-[300px] relative pointer border-2 rounded-[10px] hover:border-transparent"
           >
             <div className="see-btn opacity-0 transition-opacity absolute top-[50%] left-1/2 translate-x-[-50%] translate-y-[-50%] w-[35px] h-[35px] inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-0 to-secondary-0">
               <span className="icon icon-eye"></span>

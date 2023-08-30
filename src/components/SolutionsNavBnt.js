@@ -35,7 +35,7 @@ function SolutionsNavBnt({ close, top }) {
         className={`lg:px-2 dropdown-button flex items-center justify-center gap-1  ${
           top > 50 ? "lg:text-primary" : "lg:text-white"
         } text-[#29303b] border border-transparent text-xl md:text-[16px] lg:font-bold lg:uppercase lg:py-[5px] duration-200 ${
-          isOpen ? "bg-[#eee] text-primary" : ""
+          isOpen ? "bg-[#fff] text-primary" : ""
         } hover:text-primary`}
         onClick={toggleDropdown}
         onTouchStart={toggleDropdown}
@@ -64,7 +64,7 @@ function SolutionsNavBnt({ close, top }) {
                 <Link
                   to={`${lang}/solutions/${solution.slug}`}
                   onClick={close}
-                  className="text-[#7a7777] hover:text-primary duration-200 px-2 border-b border-black"
+                  className="text-[#7a7777] hover:text-primary duration-200 px-2 border-black py-2 uppercase"
                   key={solution.id}
                 >
                   <Translate dictionary={solution?.name} />

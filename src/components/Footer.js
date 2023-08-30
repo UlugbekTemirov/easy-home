@@ -36,7 +36,7 @@ const Footer = () => {
     <div className="bg-footer py-4">
       <Container>
         <div className="">
-          <div className="flex items-center justify-between">
+          <div className="flex md:flex-row flex-col gap-5 items-center justify-between">
             <Logo className={"w-[80px]"} />
             <h1 className="text-gray-400 text-center">
               Created by{"  "}

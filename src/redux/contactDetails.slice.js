@@ -14,6 +14,7 @@ export const fetchContactDetails = createAsyncThunk(
     const response = await request({
       url: "/api/v1/about/contact/",
     });
+    console.log(response);
     return response;
   }
 );

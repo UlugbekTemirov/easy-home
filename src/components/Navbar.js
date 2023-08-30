@@ -104,7 +104,7 @@ const Navbar = () => {
         } w-full z-[400]`}
       >
         <Container>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center py-2">
             <Logo />
             <HamburgerButton
               open={navbar}
@@ -128,7 +128,7 @@ const Navbar = () => {
                   </Link>
                 ))}
 
-                <SelectLang />
+                <SelectLang dark={top > 50} />
               </div>
             </div>
           </div>

@@ -77,8 +77,6 @@ h1 {
 }
 
 .icon {
-  width: 30px;
-  height: 30px;
   display: inline-block;
   mask-repeat: no-repeat;
   mask-size: 100%;
@@ -161,6 +159,12 @@ h1 {
   -webkit-mask-image: url("./assets/icons/next.png");
   mask-image: url("./assets/icons/next.png");
   background-color: #00c6ff;
+}
+
+.icon-logo {
+  -webkit-mask-image: url("./assets/icons/version4.svg");
+  mask-image: url("./assets/icons/version4.svg");
+  background-color: #fff;
 }
 
 .two-line-text {
@@ -357,4 +361,8 @@ h1 {
   width: max-content;
   min-width: 100%;
   /* width: 100%; Take full width on mobile */
+}
+
+#cat-swip .swiper-slide {
+  width: fit-content !important;
 }

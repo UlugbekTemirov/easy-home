@@ -6,6 +6,8 @@ import classnames from "classnames";
 import Translate from "../../../utils/Translate";
 import GradientBtn from "../../../components/GradientBtn";
 import { fetchProductsCategories } from "../../../redux/productsCategories.slice";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { Navigation } from "swiper";
 
 function HomeProductCategories() {
   const { activeCategory } = useSelector((state) => state.home);
@@ -30,24 +32,33 @@ function HomeProductCategories() {
       const classNames = classnames("category-item", {
         active: activeCategory === category.slug,
       });
+
       return (
-        <GradientBtn
-          key={category.id}
-          className={`${classNames}`}
-          onClick={() => handleCategoryChange(category.slug)}
-        >
-          <Translate dictionary={category.name} />
-        </GradientBtn>
+        <SwiperSlide>
+          <GradientBtn
+            key={category.id}
+            className={`${classNames}`}
+            onClick={() => handleCategoryChange(category.slug)}
+          >
+            <Translate dictionary={category.name} />
+          </GradientBtn>
+        </SwiperSlide>
       );
     });
   };
 
   return (
-    <div
-      data-aos="fade-up"
-      className="flex items-center justify-center gap-1 flex-wrap"
-    >
-      {loading && error ? null : renderCategories(productsCategories?.results)}
+    <div id="cat-swip" data-aos="fade-up" className="w-full">
+      <Swiper
+        // navigation={window.innerWidth < 750 ? false : true}
+        modules={[Navigation]}
+        spaceBetween={10}
+        slidesPerView={"auto"}
+      >
+        {loading && error
+          ? null
+          : renderCategories(productsCategories?.results)}
+      </Swiper>
     </div>
   );
 }

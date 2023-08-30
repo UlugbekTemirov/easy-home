@@ -18,7 +18,7 @@ const options = [
   },
 ];
 
-const SelectLang = () => {
+const SelectLang = ({ dark }) => {
   const { lang } = useSelector((state) => state.navbar);
   const dispatch = useDispatch();
   const location = useLocation();
@@ -36,6 +36,9 @@ const SelectLang = () => {
     <div className="relative md:pl-4">
       <select
         value={lang}
+        className={`rounded-md px-3 bg-transparent uppercase ${
+          dark ? "text-gray-900" : "text-white"
+        } border-2 pt-1`}
         onChange={(e) => dispatch(setLang(e.target.value.toLowerCase()))}
       >
         {options.map(({ name, id }) => {

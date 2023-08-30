@@ -66,7 +66,7 @@ const MobileMenu = ({ open, routes, close }) => {
             <ServicesNavBtn close={close} />
           </div>
           <div className="mt-5">
-            <SelectLang />
+            <SelectLang dark />
           </div>
         </div>
         <div>
