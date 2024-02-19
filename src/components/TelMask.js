@@ -7,8 +7,8 @@ function TelMask({ className = "", onChange = () => {}, item = "" }) {
       className={`w-full font-[900] ${
         item === "newsletter" ? "mb-0" : "mb-4"
       } text-[#415674] py-3 px-5 border-0 rounded-md focus:outline-none placeholder:text-[14px] placeholder:font-[700]  text-[14px] ${className}`}
-      mask="+\9\98 99 999 99 99"
-      placeholder="+998 90 123 45 67"
+      mask="+\9\98999999999"
+      placeholder="+998901234567"
       onChange={onChange}
     />
   );
