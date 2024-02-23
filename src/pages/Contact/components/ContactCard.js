@@ -14,7 +14,7 @@ function ContactCard({
         <div
           className={`icon-round-box  flex items-center justify-center p-[20px] rounded-full ${iconBg}`}
         >
-          <span className={"icon " + iconClassname}></span>
+          <span className={"icon " + iconClassname + " w-8 h-8"}></span>
         </div>
         <h3 className="text-xl font-semibold">
           <Translate dictionary={title} />
